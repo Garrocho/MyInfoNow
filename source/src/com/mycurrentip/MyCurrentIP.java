@@ -3,6 +3,7 @@ package com.mycurrentip;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.GridView;
 import android.widget.TabHost;
@@ -42,14 +43,14 @@ public class MyCurrentIP extends Activity {
 	}
 	
 	public void trataEventoMenu(int posicao) {
-		//Intent intent = null;
+		Intent intent = null;
 		switch (posicao) {
 			case 0:{
 				//intent = new Intent("consulta_cliente");
 				break;
 			}
 			case 1:{
-				//intent = new Intent("consulta_pedido");
+				intent = new Intent("mycurrentip_ajuda");
 				break;
 			}
 			case 2:{
@@ -60,9 +61,9 @@ public class MyCurrentIP extends Activity {
 				break;
 			}
 		}
-		//if (intent != null){
-			//startActivity(intent);
-		//}
+		if (intent != null){
+			startActivity(intent);
+		}
 	}
 
 	@Override
