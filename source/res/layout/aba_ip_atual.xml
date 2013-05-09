@@ -2,20 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/aba_ip_atual"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <EditText
-        android:id="@+id/activity_my_current_ip_campo_texto_ip_atual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:gravity="center"
-        android:text="192.168.100.500" >
-
-        <requestFocus />
-    </EditText>
+    android:layout_height="match_parent"
+    android:background="@drawable/background" >
 
     <Button
         android:id="@+id/activity_my_current_ip_botao_sair"
@@ -24,6 +12,39 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:drawableLeft="@drawable/sair"
-        android:text="@string/botao_sair" />
+        android:text="@string/botao_sair"
+        android:textColor="@android:color/white" />
 
+    <Button
+        android:id="@+id/activity_my_current_ip_botao_atualizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:drawableLeft="@drawable/atualizar"
+        android:text="@string/botao_atualizar"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/activity_my_current_ip_texto_ip_atual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/ip"
+        android:textSize="14pt"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/activity_my_current_ip_texto_seu_ip_atual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/activity_my_current_ip_texto_ip_atual"
+        android:layout_centerHorizontal="true"
+        android:text="@string/rotulo_seu_ip"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="italic" />
+    
 </RelativeLayout>

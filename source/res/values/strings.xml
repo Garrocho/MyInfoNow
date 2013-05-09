@@ -4,5 +4,8 @@
     <string name="app_name">MyCurrentIP</string>
     <string name="action_settings">Settings</string>
     <string name="botao_sair">Sair</string>
+    <string name="botao_atualizar">Atualizar</string>
+    <string name="ip">192.168.100.095</string>
+    <string name="rotulo_seu_ip">Seu IP Atual é</string>
 
 </resources>
