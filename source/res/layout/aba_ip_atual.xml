@@ -5,26 +5,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/background" >
 
-    <Button
-        android:id="@+id/activity_my_current_ip_botao_sair"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:drawableLeft="@drawable/sair"
-        android:text="@string/botao_sair"
-        android:textColor="@android:color/white" />
-
-    <Button
-        android:id="@+id/activity_my_current_ip_botao_atualizar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:drawableLeft="@drawable/atualizar"
-        android:text="@string/botao_atualizar"
-        android:textColor="@android:color/white" />
-
     <TextView
         android:id="@+id/activity_my_current_ip_texto_ip_atual"
         android:layout_width="wrap_content"
@@ -46,5 +26,21 @@
         android:text="@string/rotulo_seu_ip"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="italic" />
-    
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" >
+        
+        <GridView
+            android:id="@+id/activity_my_current_ip_menu"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:numColumns="3" >
+    	</GridView>
+        
+    </LinearLayout>
+
 </RelativeLayout>
