@@ -52,6 +52,10 @@ public class MyCurrentIP extends Activity {
 				//intent = new Intent("consulta_pedido");
 				break;
 			}
+			case 2:{
+				verificaSaida();
+				break;
+			}
 			default:{
 				break;
 			}

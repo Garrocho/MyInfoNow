@@ -7,5 +7,6 @@
     <string name="botao_atualizar">Atualizar</string>
     <string name="ip">192.168.100.095</string>
     <string name="rotulo_seu_ip">Seu IP Atual é</string>
+    <string name="rotulo_icone">Menu</string>
 
 </resources>

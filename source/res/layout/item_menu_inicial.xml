@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget44"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/item_menu_inicial_icone_imagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/rotulo_icone" />
+
+    <TextView
+        android:id="@+id/item_menu_inicial_icone_texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_menu_inicial_icone_imagem"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:textIsSelectable="false" />
+
+</RelativeLayout>
