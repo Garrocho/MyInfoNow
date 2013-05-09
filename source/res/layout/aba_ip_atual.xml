@@ -23,24 +23,23 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/activity_my_current_ip_texto_ip_atual"
         android:layout_centerHorizontal="true"
-        android:text="@string/rotulo_seu_ip"
+        android:text="@string/rotulo_meu_ip"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textStyle="italic" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" >
-        
-        <GridView
-            android:id="@+id/activity_my_current_ip_menu"
-            android:layout_width="match_parent"
-            android:layout_height="57dp"
-            android:numColumns="3" >
-    	</GridView>
-        
-    </LinearLayout>
+    
+    <GridView
+        android:id="@+id/activity_my_current_ip_menu"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/activity_my_current_ip_texto_ip_atual"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:columnWidth="130dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="3"
+        android:padding="10dp"
+        android:stackFromBottom="true"
+        android:stretchMode="columnWidth" />
 
 </RelativeLayout>
