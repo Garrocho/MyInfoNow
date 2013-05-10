@@ -6,7 +6,7 @@ import com.mycurrentip.MyCurrentIP;
 import com.mycurrentip.util.Utils;
 
 
-public class TarefaAtualizaIP extends AsyncTask<String, String, String> {
+public class TarefaAtualizaIP extends AsyncTask<Boolean, String, String> {
 
 	private MyCurrentIP myCurrentIP;
 
@@ -15,8 +15,8 @@ public class TarefaAtualizaIP extends AsyncTask<String, String, String> {
 	}
 
 	@Override
-	protected String doInBackground(String... argumentos) {
-		return Utils.getIPAddress(true); // IPv4
+	protected String doInBackground(Boolean... argv) {
+		return Utils.getIPAddress(argv[0]);
 	}
 
 	@Override

@@ -5,12 +5,13 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
+import android.widget.TextView;
 
 import com.mycurrentip.adapter.MenuAdapter;
+import com.mycurrentip.tarefa.TarefaAtualizaIP;
 
 public class MyCurrentIP extends Activity {
 
@@ -18,14 +19,14 @@ public class MyCurrentIP extends Activity {
 	private GridView gridMenuInicial;
 	private String nomesMenus[] = {"Atualizar", "Ajuda", "Sair"};
 	private int imagensMenus[]  = {R.drawable.atualizar, R.drawable.ajuda, R.drawable.sair};
-	private EditText campoTextoIP;
+	private TextView campoTextoIP;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_current_ip);
 		
-		campoTextoIP = (EditText)findViewById(R.id.activity_my_current_ip_texto_ip_atual);
+		campoTextoIP = (TextView)findViewById(R.id.activity_my_current_ip_texto_ip_atual);
 
 		tabHost = (TabHost)findViewById(R.id.activity_my_current_ip_tab_host);
 		tabHost.setup();
@@ -45,23 +46,24 @@ public class MyCurrentIP extends Activity {
 		gridMenuInicial = (GridView)findViewById(R.id.activity_my_current_ip_menu);
 		gridMenuInicial.setAdapter(new MenuAdapter(this));
 	}
-	
+
 	public void trataEventoMenu(int posicao) {
 		Intent intent = null;
 		switch (posicao) {
-			case 0:{
-				//intent = new Intent("consulta_cliente");
+			case 0: {
+				TarefaAtualizaIP tarefa = new TarefaAtualizaIP(this);
+				tarefa.execute(true); // IPv4
 				break;
 			}
-			case 1:{
+			case 1: {
 				intent = new Intent("mycurrentip_ajuda");
 				break;
 			}
-			case 2:{
+			case 2: {
 				verificaSaida();
 				break;
 			}
-			default:{
+			default: {
 				break;
 			}
 		}
@@ -98,7 +100,7 @@ public class MyCurrentIP extends Activity {
 		return imagensMenus;
 	}
 
-	public EditText getCampoTextoIP() {
+	public TextView getCampoTextoIP() {
 		return campoTextoIP;
 	}
 }
