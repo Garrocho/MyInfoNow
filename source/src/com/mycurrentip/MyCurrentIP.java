@@ -46,6 +46,13 @@ public class MyCurrentIP extends Activity {
 		gridMenuInicial = (GridView)findViewById(R.id.activity_my_current_ip_menu);
 		gridMenuInicial.setAdapter(new MenuAdapter(this));
 	}
+	
+	@Override
+	protected void onResume() {
+		TarefaAtualizaIP tarefa = new TarefaAtualizaIP(this);
+		tarefa.execute(true); // IPv4
+		super.onResume();
+	}
 
 	public void trataEventoMenu(int posicao) {
 		Intent intent = null;
