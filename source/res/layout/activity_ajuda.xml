@@ -29,4 +29,14 @@
         android:text="@string/botao_voltar"
         android:textColor="@android:color/white" />
 
+    <TextView
+        android:id="@+id/atividade_ajuda_texto_autor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/atividade_ajuda_imagem_logo_add_ti"
+        android:layout_centerHorizontal="true"
+        android:text="@string/autor"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white" />
+
 </RelativeLayout>
