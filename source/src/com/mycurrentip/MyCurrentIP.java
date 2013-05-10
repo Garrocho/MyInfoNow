@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
@@ -17,11 +18,14 @@ public class MyCurrentIP extends Activity {
 	private GridView gridMenuInicial;
 	private String nomesMenus[] = {"Atualizar", "Ajuda", "Sair"};
 	private int imagensMenus[]  = {R.drawable.atualizar, R.drawable.ajuda, R.drawable.sair};
+	private EditText campoTextoIP;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_current_ip);
+		
+		campoTextoIP = (EditText)findViewById(R.id.activity_my_current_ip_texto_ip_atual);
 
 		tabHost = (TabHost)findViewById(R.id.activity_my_current_ip_tab_host);
 		tabHost.setup();
@@ -90,15 +94,11 @@ public class MyCurrentIP extends Activity {
 		return nomesMenus;
 	}
 
-	public void setNomesMenus(String nomesMenus[]) {
-		this.nomesMenus = nomesMenus;
-	}
-
 	public int[] getImagensMenus() {
 		return imagensMenus;
 	}
 
-	public void setImagensMenus(int imagensMenus[]) {
-		this.imagensMenus = imagensMenus;
+	public EditText getCampoTextoIP() {
+		return campoTextoIP;
 	}
 }
