@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.GridView;
@@ -32,9 +33,9 @@ public class MyCurrentIP extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_current_ip);
-		
+
 		this.repoHistorico = new RepositorioHistorico(this);
-		
+
 		campoTextoIP = (TextView)findViewById(R.id.activity_my_current_ip_texto_ip_atual);
 
 		tabHost = (TabHost)findViewById(R.id.activity_my_current_ip_tab_host);
@@ -51,18 +52,26 @@ public class MyCurrentIP extends Activity {
 
 		tabHost.addTab(spec1);
 		tabHost.addTab(spec2);
-		
+
 		gridMenuInicial = (GridView)findViewById(R.id.activity_my_current_ip_menu);
 		gridMenuInicial.setAdapter(new MenuAdapter(this));
-		
+
 		listaHitorico = (ListView)findViewById(R.id.aba_ips_anteriores_lista);
+
+		for(int i=0;i< tabHost.getTabWidget().getChildCount();i++) 
+		{ 
+			TextView tv = (TextView) tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title);
+			tv.setTextColor(Color.parseColor("#ffffff"));
+		}
+		TextView tv = (TextView) tabHost.getCurrentTabView().findViewById(android.R.id.title);
+		tv.setTextColor(Color.parseColor("#ffffff"));
 	}
-	
+
 	@Override
 	protected void onResume() {
 		TarefaAtualizaIP tarefa = new TarefaAtualizaIP(this);
 		tarefa.execute(true); // IPv4
-		
+
 		listaHitorico.setAdapter(new ListaHistoricoAdapter(this, repoHistorico.listar()));
 		super.onResume();
 	}
@@ -70,22 +79,22 @@ public class MyCurrentIP extends Activity {
 	public void trataEventoMenu(int posicao) {
 		Intent intent = null;
 		switch (posicao) {
-			case 0: {
-				TarefaAtualizaIP tarefa = new TarefaAtualizaIP(this);
-				tarefa.execute(true); // IPv4
-				break;
-			}
-			case 1: {
-				intent = new Intent("mycurrentip_ajuda");
-				break;
-			}
-			case 2: {
-				verificaSaida();
-				break;
-			}
-			default: {
-				break;
-			}
+		case 0: {
+			TarefaAtualizaIP tarefa = new TarefaAtualizaIP(this);
+			tarefa.execute(true); // IPv4
+			break;
+		}
+		case 1: {
+			intent = new Intent("mycurrentip_ajuda");
+			break;
+		}
+		case 2: {
+			verificaSaida();
+			break;
+		}
+		default: {
+			break;
+		}
 		}
 		if (intent != null){
 			startActivity(intent);
@@ -111,7 +120,7 @@ public class MyCurrentIP extends Activity {
 		.setNegativeButton("Não", null)
 		.show();
 	}
-	
+
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
