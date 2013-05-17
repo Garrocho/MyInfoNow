@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lista_linha_itens_tabela_precos_lista_linha"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp" >
+
+    <TextView
+        android:id="@+id/lista_itens_ips_anteriores_ip"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="IP"
+        android:textStyle="bold" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/lista_itens_ips_anteriores_data_hora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/lista_itens_ips_anteriores_ip"
+        android:text="DATA HORA"
+        android:textSize="5pt"
+        android:textStyle="italic" />
+
+</RelativeLayout>

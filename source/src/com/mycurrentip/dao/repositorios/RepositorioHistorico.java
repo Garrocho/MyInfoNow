@@ -13,7 +13,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.mycurrentip.R;
 import com.mycurrentip.classes.Historico;
 import com.mycurrentip.classes.Historico.Historicos;
 import com.mycurrentip.dao.DatabaseHelper;
@@ -23,10 +22,8 @@ public class RepositorioHistorico implements IRepositorio<Historico>{
 
 	private SQLiteDatabase db;
 	private Historico historico;
-	private Context contexto;
 
 	public RepositorioHistorico(Context context) {
-		contexto = context;
 		historico = new Historico();
 		//pega o banco de dados
 		db = DatabaseHelper.getInstance(context).getDb();

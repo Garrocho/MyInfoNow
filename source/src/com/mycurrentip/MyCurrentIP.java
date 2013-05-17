@@ -6,11 +6,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
+import com.mycurrentip.adapter.ListaHistoricoAdapter;
 import com.mycurrentip.adapter.MenuAdapter;
+import com.mycurrentip.dao.repositorios.RepositorioHistorico;
 import com.mycurrentip.tarefa.TarefaAtualizaIP;
 
 public class MyCurrentIP extends Activity {
@@ -20,6 +23,7 @@ public class MyCurrentIP extends Activity {
 	private String nomesMenus[] = {"Atualizar", "Ajuda", "Sair"};
 	private int imagensMenus[]  = {R.drawable.atualizar, R.drawable.ajuda, R.drawable.sair};
 	private TextView campoTextoIP;
+	private ListView listaHitorico;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +36,10 @@ public class MyCurrentIP extends Activity {
 		tabHost.setup();
 
 		TabSpec spec1 = tabHost.newTabSpec("IP Atual");
-		TabSpec spec2 = tabHost.newTabSpec("IPs Anteriores");
+		TabSpec spec2 = tabHost.newTabSpec("Histórico");
 
 		spec1.setIndicator("IP Atual");
-		spec2.setIndicator("IPs Anteriores");
+		spec2.setIndicator("Histórico");
 
 		spec1.setContent(R.id.aba_ip_atual);
 		spec2.setContent(R.id.aba_ips_anteriores);
@@ -45,12 +49,18 @@ public class MyCurrentIP extends Activity {
 		
 		gridMenuInicial = (GridView)findViewById(R.id.activity_my_current_ip_menu);
 		gridMenuInicial.setAdapter(new MenuAdapter(this));
+		
+		listaHitorico = (ListView) findViewById(R.id.aba_ips_anteriores_lista);
 	}
 	
 	@Override
 	protected void onResume() {
 		TarefaAtualizaIP tarefa = new TarefaAtualizaIP(this);
 		tarefa.execute(true); // IPv4
+		
+		RepositorioHistorico repoHistorico = new RepositorioHistorico(this);
+		
+		listaHitorico.setAdapter(new ListaHistoricoAdapter(this, repoHistorico.listar()));
 		super.onResume();
 	}
 
