@@ -32,7 +32,6 @@ public class RepositorioHistorico implements IRepositorio<Historico>{
 	public ContentValues createContentValues(Historico Historico){
 		ContentValues valores = new ContentValues();
 		valores.put(Historicos.IP, Historico.getIp());
-		valores.put(Historicos.DATA_HORA, Historico.getData_hora().toString());
 		return valores;
 	}
 

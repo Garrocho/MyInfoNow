@@ -3,6 +3,7 @@ package com.mycurrentip.tarefa;
 import android.os.AsyncTask;
 
 import com.mycurrentip.MyCurrentIP;
+import com.mycurrentip.classes.Historico;
 import com.mycurrentip.util.Utils;
 
 
@@ -22,5 +23,9 @@ public class TarefaAtualizaIP extends AsyncTask<Boolean, String, String> {
 	@Override
 	protected void onPostExecute(String resposta) {
 		myCurrentIP.getCampoTextoIP().setText(resposta);
+		
+		Historico historico = new Historico();
+		historico.setIp(resposta);
+		myCurrentIP.getRepoHistorico().insert(historico);
 	}
 }

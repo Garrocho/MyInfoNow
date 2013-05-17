@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TabHost;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.mycurrentip.adapter.ListaHistoricoAdapter;
 import com.mycurrentip.adapter.MenuAdapter;
+import com.mycurrentip.dao.DatabaseHelper;
 import com.mycurrentip.dao.repositorios.RepositorioHistorico;
 import com.mycurrentip.tarefa.TarefaAtualizaIP;
 
@@ -24,11 +26,14 @@ public class MyCurrentIP extends Activity {
 	private int imagensMenus[]  = {R.drawable.atualizar, R.drawable.ajuda, R.drawable.sair};
 	private TextView campoTextoIP;
 	private ListView listaHitorico;
+	private RepositorioHistorico repoHistorico;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_current_ip);
+		
+		this.repoHistorico = new RepositorioHistorico(this);
 		
 		campoTextoIP = (TextView)findViewById(R.id.activity_my_current_ip_texto_ip_atual);
 
@@ -50,15 +55,13 @@ public class MyCurrentIP extends Activity {
 		gridMenuInicial = (GridView)findViewById(R.id.activity_my_current_ip_menu);
 		gridMenuInicial.setAdapter(new MenuAdapter(this));
 		
-		listaHitorico = (ListView) findViewById(R.id.aba_ips_anteriores_lista);
+		listaHitorico = (ListView)findViewById(R.id.aba_ips_anteriores_lista);
 	}
 	
 	@Override
 	protected void onResume() {
 		TarefaAtualizaIP tarefa = new TarefaAtualizaIP(this);
 		tarefa.execute(true); // IPv4
-		
-		RepositorioHistorico repoHistorico = new RepositorioHistorico(this);
 		
 		listaHitorico.setAdapter(new ListaHistoricoAdapter(this, repoHistorico.listar()));
 		super.onResume();
@@ -108,6 +111,16 @@ public class MyCurrentIP extends Activity {
 		.setNegativeButton("Não", null)
 		.show();
 	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		Log.d(getClass().getName(), "Fechou o Banco.");
+		DatabaseHelper db = DatabaseHelper.getInstance(this);
+		if(db.isOpen()){
+			db.fechar();
+		}
+	}
 
 	public String[] getNomesMenus() {
 		return nomesMenus;
@@ -119,5 +132,9 @@ public class MyCurrentIP extends Activity {
 
 	public TextView getCampoTextoIP() {
 		return campoTextoIP;
+	}
+
+	public RepositorioHistorico getRepoHistorico() {
+		return repoHistorico;
 	}
 }
