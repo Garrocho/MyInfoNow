@@ -1,9 +1,15 @@
 package com.mycurrentip.classes;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Calendar;
 
 public class Data {
+	
+	public static Timestamp getDataHoraAtual(){
+		Calendar calendar = Calendar.getInstance();
+		return new Timestamp(calendar.getTimeInMillis());
+	}
 	
 	public static Date getDataAtual(){
 		Calendar calendar = Calendar.getInstance();
