@@ -7,8 +7,8 @@ import java.util.Calendar;
 public class Data {
 	
 	public static Timestamp getDataHoraAtual(){
-		Calendar calendar = Calendar.getInstance();
-		return new Timestamp(calendar.getTimeInMillis());
+		int time = (int) (System.currentTimeMillis());
+		return new Timestamp(time);
 	}
 	
 	public static Date getDataAtual(){
