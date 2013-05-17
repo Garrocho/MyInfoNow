@@ -60,7 +60,7 @@ public class RepositorioHistorico implements IRepositorio<Historico>{
 	}
 
 	public Cursor getCursor(){
-		String orderBy = Historicos.IP + " ASC";
+		String orderBy = Historicos.DATA_HORA + " ASC";
 		try{
 			return db.query(NOME_TABELA, Historicos.COLUNAS, null, null, null, null, orderBy);
 		}catch(SQLException e){
