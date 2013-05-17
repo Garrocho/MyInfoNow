@@ -22,7 +22,7 @@ public class DatabaseHelper {
 	private static final String[] DATABASE_CREATE = new String[]{
 	"CREATE TABLE IF NOT EXISTS historico (" +
 		"ip VARCHAR(25), " +
-		"data_hora TIMESTAMP, " +
+		"data_hora TIMESTAMP DEFAULT now(), " +
 		"PRIMARY KEY (ip, data_hora)" +
 		");" +
 	""
