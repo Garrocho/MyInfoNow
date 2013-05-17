@@ -18,6 +18,7 @@
         android:layout_height="fill_parent" >
 
         <include layout="@layout/aba_ip_atual" /> 
+        
         <include layout="@layout/aba_ips_anteriores" />
     </FrameLayout>
 </TabHost>
