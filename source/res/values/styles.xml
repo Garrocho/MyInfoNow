@@ -16,5 +16,19 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="rotulo">
+		<item name="android:textColor">@color/branco</item>
+	</style>
+    
+    <style name="rotulo_titulo" parent="rotulo">
+		<item name="android:textColor">@color/azul</item>
+		<item name="android:textSize">24sp</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:shadowColor">@color/preto</item>
+		<item name="android:shadowDx">1</item>
+		<item name="android:shadowDy">1</item>
+		<item name="android:shadowRadius">1</item>
+	</style>
 
 </resources>
