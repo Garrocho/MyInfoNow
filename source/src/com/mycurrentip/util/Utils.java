@@ -3,6 +3,7 @@ package com.mycurrentip.util;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.http.conn.util.InetAddressUtils;
@@ -41,29 +42,38 @@ public class Utils {
 		return "";
 	}
 
-	/**
-	 * Returns Endereço MAC da interface de rede.
-	 * @param Interface nomes: eth0, wlan0 or NULL= use para primeira interface.
-	 * @return Endereço MAC ou uma string vazia.
-	 */
 	@SuppressLint("NewApi")
-	public static String getEnderecoMAC(String interfaceName) {
+	public static String getEnderecoMAC() {
+		HashMap<String, String> enderecos = null;
 		try {
 			List<NetworkInterface> interfaces = Collections.list(NetworkInterface.getNetworkInterfaces());
+			enderecos = new HashMap<String, String>();
 			for (NetworkInterface intf : interfaces) {
-				if (interfaceName != null) {
-					if (!intf.getName().equalsIgnoreCase(interfaceName)) continue;
-				}
 				byte[] mac = intf.getHardwareAddress();
-				if (mac==null) return "";
+				if (mac==null) {
+					enderecos.put(intf.getName(), "NADA");
+					continue;
+				}
 				StringBuilder buf = new StringBuilder();
 				for (int idx=0; idx<mac.length; idx++)
 					buf.append(String.format("%02X:", mac[idx]));
 				if (buf.length()>0) buf.deleteCharAt(buf.length()-1);
-				return buf.toString();
+				enderecos.put(intf.getName(), buf.toString());
 			}
 		} catch (Exception ex) { }
-		return "";
+		String end = "NADA";
+		if (enderecos.containsKey("wlan0")) {
+			end = enderecos.get("wlan0");
+		}
+		if (enderecos.containsKey("ifb0") && end.equalsIgnoreCase("NADA")) {
+			end = enderecos.get("ifb0");
+		}
+		if (enderecos.containsKey("ifb1") && end.equalsIgnoreCase("NADA")) {
+			end = enderecos.get("ifb1");
+		}
+		if (end.equalsIgnoreCase("NADA") && end.equalsIgnoreCase("NADA"))
+			return "NÃO ENCONTRADO";
+		return end;
 	}
 
 }
