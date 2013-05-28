@@ -3,17 +3,14 @@ package com.mycurrentip.util;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.util.Collections;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 
 import org.apache.http.conn.util.InetAddressUtils;
 
 import android.annotation.SuppressLint;
-import android.text.format.Formatter;
-import android.util.Log;
 
-public class Utils {
+public class Enderecos {
 
 	/**
 	 * Obtem o endereço de IP da interface localhost.

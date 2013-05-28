@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 import com.mycurrentip.MyCurrentIP;
 import com.mycurrentip.classes.Data;
 import com.mycurrentip.classes.Historico;
-import com.mycurrentip.util.Utils;
+import com.mycurrentip.util.Enderecos;
 
 
 public class TarefaAtualizaIP extends AsyncTask<Boolean, String, HashMap<String, String>> {
@@ -21,8 +21,8 @@ public class TarefaAtualizaIP extends AsyncTask<Boolean, String, HashMap<String,
 	@Override
 	protected HashMap<String, String> doInBackground(Boolean... argv) {
 		HashMap<String, String> enderecos = new HashMap<String, String>();
-		enderecos.put("IP_LOCAL", Utils.getEnderecoIP(argv[0]));
-		enderecos.put("MAC", Utils.getEnderecoMAC());
+		enderecos.put("IP_LOCAL", Enderecos.getEnderecoIP(argv[0]));
+		enderecos.put("MAC", Enderecos.getEnderecoMAC());
 		return enderecos;
 	}
 
