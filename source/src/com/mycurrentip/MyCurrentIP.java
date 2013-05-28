@@ -26,6 +26,7 @@ public class MyCurrentIP extends Activity {
 	private String nomesMenus[] = {"Atualizar", "Ajuda", "Sair"};
 	private int imagensMenus[]  = {R.drawable.atualizar, R.drawable.ajuda, R.drawable.sair};
 	private TextView campoTextoIP;
+	private TextView campoTextoMAC;
 	private ListView listaHitorico;
 	private RepositorioHistorico repoHistorico;
 
@@ -36,7 +37,8 @@ public class MyCurrentIP extends Activity {
 
 		this.repoHistorico = new RepositorioHistorico(this);
 
-		campoTextoIP = (TextView)findViewById(R.id.activity_my_current_ip_texto_ip_atual);
+		campoTextoIP = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_local);
+		campoTextoMAC = (TextView)findViewById(R.id.activity_my_current_campo_texto_mac);
 
 		tabHost = (TabHost)findViewById(R.id.activity_my_current_ip_tab_host);
 		tabHost.setup();
@@ -141,6 +143,10 @@ public class MyCurrentIP extends Activity {
 
 	public TextView getCampoTextoIP() {
 		return campoTextoIP;
+	}
+	
+	public TextView getCampoTextoMAC() {
+		return campoTextoMAC;
 	}
 
 	public RepositorioHistorico getRepoHistorico() {
