@@ -5,36 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background">
-
-    <TextView
-        android:id="@+id/activity_my_current_ip_texto_ip_atual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/ip"
-        android:textSize="14pt"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/activity_my_current_ip_texto_seu_ip_atual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/activity_my_current_ip_texto_ip_atual"
-        android:layout_centerHorizontal="true"
-        android:text="@string/rotulo_meu_ip"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textStyle="italic" />
     
     <GridView
         android:id="@+id/activity_my_current_ip_menu"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/activity_my_current_ip_texto_ip_atual"
+        android:layout_below="@+id/activity_my_current_campo_texto_mac"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:columnWidth="130dp"
         android:gravity="center"
         android:horizontalSpacing="10dp"
@@ -42,5 +19,55 @@
         android:padding="10dp"
         android:stackFromBottom="true"
         android:stretchMode="columnWidth" />
+
+    <TextView
+        android:id="@+id/activity_my_current_rotulo_ip_local"
+        style="@style/rotulo_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:text="@string/rotulo_endereco_ip_local"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/activity_my_current_rotulo_mac"
+        style="@style/rotulo_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_my_current_campo_texto_ip_local"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="@string/rotulo_endereco_mac"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/activity_my_current_campo_texto_mac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/activity_my_current_rotulo_mac"
+        android:text="@string/ip"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white"
+        android:textSize="14pt"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/activity_my_current_campo_texto_ip_local"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/activity_my_current_rotulo_ip_local"
+        android:text="@string/ip"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white"
+        android:textSize="14pt"
+        android:gravity="center"
+        android:textStyle="bold" />
 
 </RelativeLayout>
