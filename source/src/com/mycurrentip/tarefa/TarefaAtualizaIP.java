@@ -18,7 +18,7 @@ public class TarefaAtualizaIP extends AsyncTask<Boolean, String, String> {
 
 	@Override
 	protected String doInBackground(Boolean... argv) {
-		return Utils.getIPAddress(argv[0]);
+		return Utils.getEnderecoIP(argv[0]);
 	}
 
 	@Override
