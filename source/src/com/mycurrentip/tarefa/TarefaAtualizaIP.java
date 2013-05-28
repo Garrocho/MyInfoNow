@@ -3,7 +3,6 @@ package com.mycurrentip.tarefa;
 import java.util.HashMap;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.mycurrentip.MyCurrentIP;
 import com.mycurrentip.classes.Data;
@@ -24,9 +23,6 @@ public class TarefaAtualizaIP extends AsyncTask<Boolean, String, HashMap<String,
 		HashMap<String, String> enderecos = new HashMap<String, String>();
 		enderecos.put("IP_LOCAL", Utils.getEnderecoIP(argv[0]));
 		enderecos.put("MAC", Utils.getEnderecoMAC());
-		
-		for (String end : enderecos.values())
-			Log.d("teste", end);
 		return enderecos;
 	}
 
