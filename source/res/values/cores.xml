@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<color name="verde">#00ff00</color>
+	<color name="verde_escuro">#007d48</color>
+	<color name="azul">#ff3590c4</color>
+	<color name="transparente">@android:color/transparent</color>
+	<color name="selecionado">#cccccc</color>
+	<color name="verde_teste">#999999</color>
+	<color name="vermelho">#ff0000</color>
+	<color name="branco">#ffffff</color>
+	<color name="preto">#000000</color>
+	<color name="verde_add_ti">#00a85a</color>
+	
+	<!-- LIST BORDER COLOR -->
+	<color name="rounded_container_border">#ffb7babb</color>
+
+	<!-- ITEM BACKGROUND COLOR - STATE - DEFAULT -->
+	<color name="base_start_color_default">#FFFFFF</color>
+    <color name="base_end_color_default">#FFFFFF</color>
+    	
+	<!-- ITEM BACKGROUND COLOR - STATE - PRESSED -->
+	<color name="base_start_color_pressed">#ff3590c4</color>
+    <color name="base_end_color_pressed">#ff2570ba</color>
+    
+    <!-- ITEM TEXT COLORS - STATES - PRESSED AND DEFAULT -->
+    <color name="text_color_default">#ffffff</color>
+    <color name="text_color_pressed">#ffffff</color>
+	
+</resources>
