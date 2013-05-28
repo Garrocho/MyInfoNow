@@ -31,7 +31,7 @@ public class MenuAdapter extends BaseAdapter{
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		View view;
-		if (convertView == null) {  // if it's not recycled, initialize some attributes
+		if (convertView == null) { 
 			LayoutInflater inflater = (LayoutInflater) contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			view = inflater.inflate(R.layout.item_menu_inicial, parent, false);
 		} else {
