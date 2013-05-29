@@ -59,10 +59,10 @@ public class MyCurrentIP extends Activity implements IAtualizaInfo {
 		tabHost = (TabHost)findViewById(R.id.activity_my_current_ip_tab_host);
 		tabHost.setup();
 
-		TabSpec spec1 = tabHost.newTabSpec("IP Atual");
+		TabSpec spec1 = tabHost.newTabSpec("Minhas Informacoes");
 		TabSpec spec2 = tabHost.newTabSpec("Historico");
 
-		spec1.setIndicator("IP Atual");
+		spec1.setIndicator("Minhas Informacoes");
 		spec2.setIndicator("Historico");
 
 		spec1.setContent(R.id.aba_ip_atual);
@@ -122,6 +122,7 @@ public class MyCurrentIP extends Activity implements IAtualizaInfo {
 		else{
 			DialogoAlerta.createDialogOk(this, null, "Atualizando informacoes", "Sem conexao com a internet", true);
 		}
+		listaHitorico.setAdapter(new ListaHistoricoAdapter(this, repoHistorico.listar()));
 	}
 
 	public void trataEventoMenu(int posicao) {
@@ -220,12 +221,16 @@ public class MyCurrentIP extends Activity implements IAtualizaInfo {
 		// TODO Auto-generated method stub
 		dialogoProcesso.dismiss();
 		String ip_local = enderecos.get(Constantes.IP_LOCAL);
+		String ip_externo = enderecos.get(Constantes.IP_EXTERNO);
+		String mac = enderecos.get(Constantes.MAC);
 		getCampoTextoIP().setText(ip_local);
-		getCampoTextoIPExterno().setText(enderecos.get(Constantes.IP_EXTERNO));
-		getCampoTextoMAC().setText(enderecos.get(Constantes.MAC));
+		getCampoTextoIPExterno().setText(ip_externo);
+		getCampoTextoMAC().setText(mac);
 
 		Historico historico = new Historico();
-		historico.setIp(ip_local);
+		historico.setIp_local(ip_local);
+		historico.setIp_externo(ip_externo);
+		historico.setMac(mac);
 		historico.setData_hora(Data.getDataHoraAtual());
 		getRepoHistorico().insert(historico);
 	}
