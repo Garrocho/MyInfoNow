@@ -17,7 +17,7 @@ import com.mycurrentip.adapter.ListaHistoricoAdapter;
 import com.mycurrentip.adapter.MenuAdapter;
 import com.mycurrentip.dao.DatabaseHelper;
 import com.mycurrentip.dao.repositorios.RepositorioHistorico;
-import com.mycurrentip.tarefa.TarefaAtualizaIP;
+import com.mycurrentip.tarefa.TarefaAtualizaInfo;
 
 public class MyCurrentIP extends Activity {
 
@@ -71,7 +71,7 @@ public class MyCurrentIP extends Activity {
 
 	@Override
 	protected void onResume() {
-		TarefaAtualizaIP tarefa = new TarefaAtualizaIP(this);
+		TarefaAtualizaInfo tarefa = new TarefaAtualizaInfo(this);
 		tarefa.execute(true); // IPv4
 
 		listaHitorico.setAdapter(new ListaHistoricoAdapter(this, repoHistorico.listar()));
@@ -82,7 +82,7 @@ public class MyCurrentIP extends Activity {
 		Intent intent = null;
 		switch (posicao) {
 		case 0: {
-			TarefaAtualizaIP tarefa = new TarefaAtualizaIP(this);
+			TarefaAtualizaInfo tarefa = new TarefaAtualizaInfo(this);
 			tarefa.execute(true); // IPv4
 			break;
 		}
