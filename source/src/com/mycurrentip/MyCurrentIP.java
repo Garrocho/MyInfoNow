@@ -1,13 +1,19 @@
 package com.mycurrentip;
 
+import java.util.HashMap;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
+import android.view.WindowManager;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TabHost;
@@ -16,13 +22,16 @@ import android.widget.TextView;
 
 import com.mycurrentip.adapter.ListaHistoricoAdapter;
 import com.mycurrentip.adapter.MenuAdapter;
+import com.mycurrentip.classes.Data;
+import com.mycurrentip.classes.Historico;
 import com.mycurrentip.dao.DatabaseHelper;
 import com.mycurrentip.dao.repositorios.RepositorioHistorico;
 import com.mycurrentip.net.Conexao;
 import com.mycurrentip.tarefa.TarefaAtualizaInfo;
+import com.mycurrentip.util.Constantes;
 import com.mycurrentip.util.DialogoAlerta;
 
-public class MyCurrentIP extends Activity {
+public class MyCurrentIP extends Activity implements IAtualizaInfo {
 
 	private TabHost tabHost;
 	private GridView gridMenuInicial;
@@ -34,6 +43,7 @@ public class MyCurrentIP extends Activity {
 	private ListView listaHitorico;
 	private RepositorioHistorico repoHistorico;
 	private ProgressDialog dialogoProcesso;
+	private int orientacao = 500;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,19 +84,35 @@ public class MyCurrentIP extends Activity {
 		TextView tv = (TextView) tabHost.getCurrentTabView().findViewById(android.R.id.title);
 		tv.setTextColor(Color.parseColor("#ffffff"));
 	}
+	
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+
+		switch(orientacao) {
+		case Configuration.ORIENTATION_PORTRAIT:
+			setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+			break;
+		case Configuration.ORIENTATION_LANDSCAPE:
+			setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+			break;           
+		}
+	}
 
 	@Override
 	protected void onResume() {
-		TarefaAtualizaInfo tarefa = new TarefaAtualizaInfo(this);
-		tarefa.execute(true); // IPv4
-
+		atualizaInfo();
 		listaHitorico.setAdapter(new ListaHistoricoAdapter(this, repoHistorico.listar()));
 		super.onResume();
 	}
 	
 	public void atualizaInfo(){
+		
+		Display display = ((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay();
+		orientacao = display.getOrientation();
+		
 		dialogoProcesso = new ProgressDialog(this);
-		dialogoProcesso.setMessage("Começando a Importação...");
+		dialogoProcesso.setMessage("Obtendo informacoes...");
 		dialogoProcesso.setCancelable(false);
 
 		if(Conexao.verificaConexao(this)){
@@ -174,5 +200,33 @@ public class MyCurrentIP extends Activity {
 
 	public RepositorioHistorico getRepoHistorico() {
 		return repoHistorico;
+	}
+
+	@Override
+	public void comecouExecucao() {
+		// TODO Auto-generated method stub
+		dialogoProcesso.show();
+		
+	}
+
+	@Override
+	public void mostrarMensagem(String msg) {
+		// TODO Auto-generated method stub
+		dialogoProcesso.setMessage(msg);
+	}
+
+	@Override
+	public void terminouExecucao(HashMap<String, String> enderecos) {
+		// TODO Auto-generated method stub
+		dialogoProcesso.dismiss();
+		String ip_local = enderecos.get(Constantes.IP_LOCAL);
+		getCampoTextoIP().setText(ip_local);
+		getCampoTextoIPExterno().setText(enderecos.get(Constantes.IP_EXTERNO));
+		getCampoTextoMAC().setText(enderecos.get(Constantes.MAC));
+
+		Historico historico = new Historico();
+		historico.setIp(ip_local);
+		historico.setData_hora(Data.getDataHoraAtual());
+		getRepoHistorico().insert(historico);
 	}
 }
