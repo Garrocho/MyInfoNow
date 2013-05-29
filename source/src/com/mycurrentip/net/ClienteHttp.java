@@ -60,6 +60,7 @@ public class ClienteHttp {
 	public void executar() {
 		try {
 			UrlEncodedFormEntity urlParametros = new UrlEncodedFormEntity(parametros, HTTP.UTF_8);
+			Log.d("erro2", tipo);
 			if (tipo.equalsIgnoreCase("POST")) {
 				post.setEntity(urlParametros);
 				resposta = cliente.execute(post);
@@ -102,6 +103,7 @@ public class ClienteHttp {
 				InputStream httpEntityContent = httpEntity.getContent();
 				BufferedReader in = new BufferedReader(new InputStreamReader(httpEntityContent));
 				json = gson.fromJson(in, classe);
+				Log.d("erro", in.toString());
 				in.close();
 				return json;
 			}

@@ -3,6 +3,7 @@ package com.mycurrentip.tarefa;
 import java.util.HashMap;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.mycurrentip.MyCurrentIP;
 import com.mycurrentip.classes.Data;
@@ -40,6 +41,7 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 				executeCount++;
 				clienteHttp.executar();
 				codResposta = clienteHttp.getStatus();
+				Log.d("codresposta", String.valueOf(codResposta));
 			} while (executeCount < 5 && codResposta == 408);
 	
 			if (codResposta == 202) {
@@ -55,6 +57,7 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 	protected void onPostExecute(HashMap<String, String> resposta) {
 		String ip_local = resposta.get(Constantes.IP_LOCAL);
 		myCurrentIP.getCampoTextoIP().setText(ip_local);
+		myCurrentIP.getCampoTextoIPExterno().setText(resposta.get(Constantes.IP_EXTERNO));
 		myCurrentIP.getCampoTextoMAC().setText(resposta.get(Constantes.MAC));
 
 		Historico historico = new Historico();

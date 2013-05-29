@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/activity_my_current_campo_texto_ip_local"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="13dp"
         android:text="@string/rotulo_endereco_mac"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 

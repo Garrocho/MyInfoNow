@@ -2,6 +2,7 @@ package com.mycurrentip;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,7 +18,9 @@ import com.mycurrentip.adapter.ListaHistoricoAdapter;
 import com.mycurrentip.adapter.MenuAdapter;
 import com.mycurrentip.dao.DatabaseHelper;
 import com.mycurrentip.dao.repositorios.RepositorioHistorico;
+import com.mycurrentip.net.Conexao;
 import com.mycurrentip.tarefa.TarefaAtualizaInfo;
+import com.mycurrentip.util.DialogoAlerta;
 
 public class MyCurrentIP extends Activity {
 
@@ -30,6 +33,7 @@ public class MyCurrentIP extends Activity {
 	private TextView campoTextoMAC;
 	private ListView listaHitorico;
 	private RepositorioHistorico repoHistorico;
+	private ProgressDialog dialogoProcesso;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -79,13 +83,26 @@ public class MyCurrentIP extends Activity {
 		listaHitorico.setAdapter(new ListaHistoricoAdapter(this, repoHistorico.listar()));
 		super.onResume();
 	}
+	
+	public void atualizaInfo(){
+		dialogoProcesso = new ProgressDialog(this);
+		dialogoProcesso.setMessage("Começando a Importação...");
+		dialogoProcesso.setCancelable(false);
+
+		if(Conexao.verificaConexao(this)){
+			TarefaAtualizaInfo tarefa = new TarefaAtualizaInfo(this);
+			tarefa.execute(true); // IPv4
+		}
+		else{
+			DialogoAlerta.createDialogOk(this, null, "Atualizando informacoes", "Sem conexao com a internet", true);
+		}
+	}
 
 	public void trataEventoMenu(int posicao) {
 		Intent intent = null;
 		switch (posicao) {
 		case 0: {
-			TarefaAtualizaInfo tarefa = new TarefaAtualizaInfo(this);
-			tarefa.execute(true); // IPv4
+			atualizaInfo();
 			break;
 		}
 		case 1: {
