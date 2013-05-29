@@ -1,25 +1,26 @@
-MyCurrentIP
+MyInfoNow
 ===========
-Aplicativo Móvel Android Que Obtem o IP Atual do Dispositivo.
+Aplicativo Android que exibe informações sobre o dispositivo móvel.
 
 ## Introdução #
-O _MyCurrentIP_ é um aplicativo móvel Android e open-source desenvolvido utilizando a linguagem de programação Java.
+O _MyInfoNow_ é um aplicativo móvel Android e open-source desenvolvido utilizando a linguagem de programação Java.
 
 ## Características #
-o _MyCurrentIP_ obtem o ip atual do dispositivo móvel e exibe para o usuário o ip na tela. O aplicativo também dispoem de uma listagem com os ips anteriores.
+O Aplicativo Android que exibe o IP local e externo, o endreço MAC da interface de rede. Exibe também a vazão da largura de banda do dispositivo móvel.
 
 ## Desenvolvedor #
 Charles Tim Batista Garrocho
+Paulo Vitor Francisco
 
 ## Screenshots #
 ### Tela Inicial no modo Vertical:
 
-![alt text](https://raw.github.com/CharlesGarrocho/MyCurrentIP/master/samples/tela_inicial_vertical.png "Tela Inicial Vertical")
+![alt text](https://raw.github.com/CharlesGarrocho/MyInfoNow/master/samples/tela_inicial_vertical.png "Tela Inicial Vertical")
 
 ### Tela Inicial no modo Horizontal:
 
-![alt text](https://raw.github.com/CharlesGarrocho/MyCurrentIP/master/samples/tela_inicial_horizontal.png "Tela Inicial Horizontal")
+![alt text](https://raw.github.com/CharlesGarrocho/MyInfoNow/master/samples/tela_inicial_horizontal.png "Tela Inicial Horizontal")
 
 ### Tela Ajuda:
 
-![alt text](https://raw.github.com/CharlesGarrocho/MyCurrentIP/master/samples/tela_ajuda.png "Tela Ajuda")
+![alt text](https://raw.github.com/CharlesGarrocho/MyInfoNow/master/samples/tela_ajuda.png "Tela Ajuda")
