@@ -221,13 +221,15 @@ public class MyCurrentIP extends Activity implements IAtualizaInfo {
 		dialogoProcesso.dismiss();
 		String ip_local = enderecos.get(Constantes.IP_LOCAL);
 		String ip_externo = enderecos.get(Constantes.IP_EXTERNO);
+		String mac = enderecos.get(Constantes.MAC);
 		getCampoTextoIP().setText(ip_local);
-		getCampoTextoIPExterno().setText(enderecos.get(Constantes.IP_EXTERNO));
-		getCampoTextoMAC().setText(enderecos.get(Constantes.MAC));
+		getCampoTextoIPExterno().setText(ip_externo);
+		getCampoTextoMAC().setText(mac);
 
 		Historico historico = new Historico();
 		historico.setIp_local(ip_local);
 		historico.setIp_externo(ip_externo);
+		historico.setIp_externo(mac);
 		historico.setData_hora(Data.getDataHoraAtual());
 		getRepoHistorico().insert(historico);
 	}
