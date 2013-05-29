@@ -220,12 +220,14 @@ public class MyCurrentIP extends Activity implements IAtualizaInfo {
 		// TODO Auto-generated method stub
 		dialogoProcesso.dismiss();
 		String ip_local = enderecos.get(Constantes.IP_LOCAL);
+		String ip_externo = enderecos.get(Constantes.IP_EXTERNO);
 		getCampoTextoIP().setText(ip_local);
 		getCampoTextoIPExterno().setText(enderecos.get(Constantes.IP_EXTERNO));
 		getCampoTextoMAC().setText(enderecos.get(Constantes.MAC));
 
 		Historico historico = new Historico();
-		historico.setIp(ip_local);
+		historico.setIp_local(ip_local);
+		historico.setIp_externo(ip_externo);
 		historico.setData_hora(Data.getDataHoraAtual());
 		getRepoHistorico().insert(historico);
 	}

@@ -8,7 +8,7 @@ public class DatabaseHelper {
 	private SQLiteDatabase db;
 
 	private static final String NOME_BANCO = "mycurrentip";
-	private static final int VERSAO = 2;
+	private static final int VERSAO = 3;
 	private static DatabaseHelper banco;
 
 	private static final String[] DATABASE_TABLES = {
@@ -21,9 +21,12 @@ public class DatabaseHelper {
 
 	private static final String[] DATABASE_CREATE = new String[]{
 	"CREATE TABLE IF NOT EXISTS historico (" +
-		"ip VARCHAR(100), " +
+		"ip_local VARCHAR(100), " +
+		"ip_externo VARCHAR(100), " +
+		"mac VARCHAR(100), " +
+		"vazao VARCHAR(100), " +
 		"data_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
-		"PRIMARY KEY (ip, data_hora)" +
+		"PRIMARY KEY (ip_local, ip_externo, data_hora)" +
 		");" +
 	""
 	};
