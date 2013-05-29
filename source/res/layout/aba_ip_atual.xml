@@ -27,9 +27,20 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="115dp"
         android:text="@string/rotulo_endereco_ip_local"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+    <TextView
+        android:id="@+id/activity_my_current_rotulo_ip_externo"
+        style="@style/rotulo_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:text="@string/rotulo_endereco_ip_externo"
+        android:textAppearance="?android:attr/textAppearanceLarge" />    
 
     <TextView
         android:id="@+id/activity_my_current_rotulo_mac"
@@ -69,5 +80,19 @@
         android:textSize="14pt"
         android:gravity="center"
         android:textStyle="bold" />
+    
+    <TextView
+        android:id="@+id/activity_my_current_campo_texto_ip_externo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/activity_my_current_rotulo_ip_externo"
+        android:text="@string/ip"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white"
+        android:textSize="14pt"
+        android:gravity="center"
+        android:textStyle="bold" />    
 
 </RelativeLayout>
