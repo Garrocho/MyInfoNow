@@ -59,10 +59,10 @@ public class MyCurrentIP extends Activity implements IAtualizaInfo {
 		tabHost = (TabHost)findViewById(R.id.activity_my_current_ip_tab_host);
 		tabHost.setup();
 
-		TabSpec spec1 = tabHost.newTabSpec("IP Atual");
+		TabSpec spec1 = tabHost.newTabSpec("Minhas Informacoes");
 		TabSpec spec2 = tabHost.newTabSpec("Historico");
 
-		spec1.setIndicator("IP Atual");
+		spec1.setIndicator("Minhas Informacoes");
 		spec2.setIndicator("Historico");
 
 		spec1.setContent(R.id.aba_ip_atual);
@@ -122,6 +122,7 @@ public class MyCurrentIP extends Activity implements IAtualizaInfo {
 		else{
 			DialogoAlerta.createDialogOk(this, null, "Atualizando informacoes", "Sem conexao com a internet", true);
 		}
+		listaHitorico.setAdapter(new ListaHistoricoAdapter(this, repoHistorico.listar()));
 	}
 
 	public void trataEventoMenu(int posicao) {
@@ -229,7 +230,7 @@ public class MyCurrentIP extends Activity implements IAtualizaInfo {
 		Historico historico = new Historico();
 		historico.setIp_local(ip_local);
 		historico.setIp_externo(ip_externo);
-		historico.setIp_externo(mac);
+		historico.setMac(mac);
 		historico.setData_hora(Data.getDataHoraAtual());
 		getRepoHistorico().insert(historico);
 	}
