@@ -25,7 +25,8 @@ public class MyCurrentIP extends Activity {
 	private GridView gridMenuInicial;
 	private String nomesMenus[] = {"Atualizar", "Ajuda", "Sair"};
 	private int imagensMenus[]  = {R.drawable.atualizar, R.drawable.ajuda, R.drawable.sair};
-	private TextView campoTextoIP;
+	private TextView campoTextoIPLocal;
+	private TextView campoTextoIPExterno;
 	private TextView campoTextoMAC;
 	private ListView listaHitorico;
 	private RepositorioHistorico repoHistorico;
@@ -37,17 +38,18 @@ public class MyCurrentIP extends Activity {
 
 		this.repoHistorico = new RepositorioHistorico(this);
 
-		campoTextoIP = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_local);
+		campoTextoIPLocal = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_local);
+		campoTextoIPExterno = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_externo);
 		campoTextoMAC = (TextView)findViewById(R.id.activity_my_current_campo_texto_mac);
 
 		tabHost = (TabHost)findViewById(R.id.activity_my_current_ip_tab_host);
 		tabHost.setup();
 
 		TabSpec spec1 = tabHost.newTabSpec("IP Atual");
-		TabSpec spec2 = tabHost.newTabSpec("Histórico");
+		TabSpec spec2 = tabHost.newTabSpec("Historico");
 
 		spec1.setIndicator("IP Atual");
-		spec2.setIndicator("Histórico");
+		spec2.setIndicator("Historico");
 
 		spec1.setContent(R.id.aba_ip_atual);
 		spec2.setContent(R.id.aba_ips_anteriores);
@@ -111,7 +113,7 @@ public class MyCurrentIP extends Activity {
 	public void verificaSaida() {
 		new AlertDialog.Builder(this)
 		.setIcon(android.R.drawable.ic_dialog_alert)
-		.setTitle("Confirmação")
+		.setTitle("Confirmacao")
 		.setMessage("Deseja Sair do MyCurrentIP?")
 		.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
 			@Override
@@ -119,7 +121,7 @@ public class MyCurrentIP extends Activity {
 				MyCurrentIP.this.finish();
 			}
 		})
-		.setNegativeButton("Não", null)
+		.setNegativeButton("Nao", null)
 		.show();
 	}
 
@@ -142,9 +144,13 @@ public class MyCurrentIP extends Activity {
 	}
 
 	public TextView getCampoTextoIP() {
-		return campoTextoIP;
+		return campoTextoIPLocal;
 	}
 	
+	public TextView getCampoTextoIPExterno() {
+		return campoTextoIPExterno;
+	}
+
 	public TextView getCampoTextoMAC() {
 		return campoTextoMAC;
 	}

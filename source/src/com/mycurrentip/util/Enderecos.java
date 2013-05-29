@@ -9,7 +9,6 @@ import java.util.List;
 import org.apache.http.conn.util.InetAddressUtils;
 
 import android.annotation.SuppressLint;
-import android.util.Log;
 
 public class Enderecos {
 
