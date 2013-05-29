@@ -9,6 +9,7 @@ import java.util.List;
 import org.apache.http.conn.util.InetAddressUtils;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 
 public class Enderecos {
 
@@ -62,6 +63,9 @@ public class Enderecos {
 			}
 		} catch (Exception ex) { }
 		String end = "NADA";
+		if (enderecos.containsKey("eth0")) {
+			end = enderecos.get("eth0");
+		}		
 		if (enderecos.containsKey("wlan0")) {
 			end = enderecos.get("wlan0");
 		}
@@ -72,7 +76,7 @@ public class Enderecos {
 			end = enderecos.get("ifb1");
 		}
 		if (end.equalsIgnoreCase("NADA") && end.equalsIgnoreCase("NADA"))
-			return "Não Encontrado";
+			return "Nao Encontrado";
 		return end;
 	}
 
