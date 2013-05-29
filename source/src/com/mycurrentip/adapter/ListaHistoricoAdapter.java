@@ -38,21 +38,23 @@ public class ListaHistoricoAdapter extends BaseAdapter {
 	}
 
 	private class ViewHolder {
-		TextView ip;
-		TextView data_hora;
+		TextView titulo;
+		TextView sumario;
+		TextView texto;
 	}
 
 	@Override
 	public View getView(int posicao, View componente, ViewGroup pai) {
-		Historico tabelaPreco = (Historico)getItem(posicao);
+		Historico historico = (Historico)getItem(posicao);
 		ViewHolder holder;
 		LayoutInflater inflater =  (LayoutInflater)contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		if (componente == null) {
-			componente = inflater.inflate(R.layout.lista_itens_ips_anteriores, null);
+			componente = inflater.inflate(R.layout.lista_titulo_sumario_texto, null);
 			holder = new ViewHolder();
-			holder.ip = (TextView)componente.findViewById(R.id.lista_itens_ips_anteriores_ip);
-			holder.data_hora = (TextView)componente.findViewById(R.id.lista_itens_ips_anteriores_data_hora);
+			holder.titulo = (TextView)componente.findViewById(R.id.titulo_texto);
+			holder.sumario = (TextView)componente.findViewById(R.id.sumario_texto);
+			holder.texto = (TextView)componente.findViewById(R.id.texto_texto);
 			componente.setTag(holder);
 		}
 		else
@@ -60,8 +62,9 @@ public class ListaHistoricoAdapter extends BaseAdapter {
 			holder = (ViewHolder)componente.getTag();
 		}
 
-		holder.ip.setText(tabelaPreco.getIp());
-		holder.data_hora.setText(tabelaPreco.getData_hora().toString());
+		holder.titulo.setText(historico.getIp_local() + " | " + historico.getIp_externo());
+		holder.sumario.setText(historico.getMac());
+		holder.texto.setText(historico.getData_hora().toString());
 
 		return componente;
 	}

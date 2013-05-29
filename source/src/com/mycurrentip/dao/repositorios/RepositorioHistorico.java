@@ -31,7 +31,10 @@ public class RepositorioHistorico implements IRepositorio<Historico>{
 
 	public ContentValues createContentValues(Historico Historico){
 		ContentValues valores = new ContentValues();
-		valores.put(Historicos.IP, Historico.getIp());
+		valores.put(Historicos.IP_LOCAL, Historico.getIp_local());
+		valores.put(Historicos.IP_EXTERNO, Historico.getIp_externo());
+		valores.put(Historicos.MAC, Historico.getMac());
+		valores.put(Historicos.VAZAO, Historico.getVazao());
 		valores.put(Historicos.DATA_HORA, Historico.getData_hora().toString());
 		return valores;
 	}
@@ -68,10 +71,16 @@ public class RepositorioHistorico implements IRepositorio<Historico>{
 	public Map<String, Integer> getIndices(Cursor cursor){
 		Map<String, Integer> indices = new HashMap<String, Integer>();
 		
-		int indiceIP = cursor.getColumnIndex(Historicos.IP);
+		int indiceIP_local = cursor.getColumnIndex(Historicos.IP_LOCAL);
+		int indiceIP_externo = cursor.getColumnIndex(Historicos.IP_EXTERNO);
+		int indiceMac = cursor.getColumnIndex(Historicos.MAC);
+		int indiceVazao = cursor.getColumnIndex(Historicos.VAZAO);
 		int indiceDataHora = cursor.getColumnIndex(Historicos.DATA_HORA);
 		
-		indices.put(Historicos.IP, indiceIP);
+		indices.put(Historicos.IP_LOCAL, indiceIP_local);
+		indices.put(Historicos.IP_EXTERNO, indiceIP_externo);
+		indices.put(Historicos.MAC, indiceMac);
+		indices.put(Historicos.VAZAO, indiceVazao);
 		indices.put(Historicos.DATA_HORA, indiceDataHora);
 		
 		return indices;
@@ -81,7 +90,10 @@ public class RepositorioHistorico implements IRepositorio<Historico>{
 		Map<String, Integer> indices = getIndices(cursor);
 		
 		Historico Historico = new Historico();
-		Historico.setIp(cursor.getString(indices.get(Historicos.IP)));
+		Historico.setIp_local(cursor.getString(indices.get(Historicos.IP_LOCAL)));
+		Historico.setIp_externo(cursor.getString(indices.get(Historicos.IP_EXTERNO)));
+		Historico.setMac(cursor.getString(indices.get(Historicos.MAC)));
+		Historico.setVazao(cursor.getString(indices.get(Historicos.VAZAO)));
 		Historico.setData_hora(new Timestamp(cursor.getLong(indices.get(Historicos.DATA_HORA))));
 		
 		return Historico;
