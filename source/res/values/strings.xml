@@ -7,10 +7,12 @@
     <string name="botao_atualizar">Atualizar</string>
     <string name="ip">192.168.100.095</string>
     <string name="rotulo_endereco_ip_local">Endereço IP Local</string>
+    <string name="rotulo_endereco_ip_externo">Endereço IP Externo</string>
     <string name="rotulo_endereco_mac">Endereço MAC</string>
     <string name="rotulo_icone">Menu</string>
     <string name="title_activity_ajuda">Ajuda</string>
     <string name="botao_voltar">Voltar</string>
-    <string name="autor">Charles Garrocho</string>
+    <string name="autor_charles">Charles Garrocho</string>
+    <string name="autor_paulo">Paulo Vitor Francisco</string>
 
 </resources>
