@@ -12,6 +12,7 @@
     <string name="rotulo_icone">Menu</string>
     <string name="title_activity_ajuda">Ajuda</string>
     <string name="botao_voltar">Voltar</string>
-    <string name="autor">Charles Garrocho</string>
+    <string name="autor_charles">Charles Garrocho</string>
+    <string name="autor_paulo">Paulo Vitor Francisco</string>
 
 </resources>
