@@ -38,9 +38,9 @@ public class ListaHistoricoAdapter extends BaseAdapter {
 	}
 
 	private class ViewHolder {
-		TextView ip_local;
-		TextView ip_externo;
-		TextView data_hora;
+		TextView titulo;
+		TextView sumario;
+		TextView texto;
 	}
 
 	@Override
@@ -50,10 +50,11 @@ public class ListaHistoricoAdapter extends BaseAdapter {
 		LayoutInflater inflater =  (LayoutInflater)contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		if (componente == null) {
-			componente = inflater.inflate(R.layout.lista_itens_ips_anteriores, null);
+			componente = inflater.inflate(R.layout.lista_titulo_sumario_texto, null);
 			holder = new ViewHolder();
-			holder.ip_local = (TextView)componente.findViewById(R.id.lista_itens_ips_anteriores_ip);
-			holder.data_hora = (TextView)componente.findViewById(R.id.lista_itens_ips_anteriores_data_hora);
+			holder.titulo = (TextView)componente.findViewById(R.id.titulo_texto);
+			holder.sumario = (TextView)componente.findViewById(R.id.sumario_texto);
+			holder.texto = (TextView)componente.findViewById(R.id.texto_texto);
 			componente.setTag(holder);
 		}
 		else
@@ -61,8 +62,9 @@ public class ListaHistoricoAdapter extends BaseAdapter {
 			holder = (ViewHolder)componente.getTag();
 		}
 
-		holder.ip_local.setText(historico.getIp_local());
-		holder.data_hora.setText(historico.getData_hora().toString());
+		holder.titulo.setText(historico.getIp_local() + " | " + historico.getIp_externo());
+		holder.sumario.setText(historico.getMac());
+		holder.texto.setText(historico.getData_hora().toString());
 
 		return componente;
 	}
