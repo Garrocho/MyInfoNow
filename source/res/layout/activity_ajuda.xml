@@ -30,13 +30,23 @@
         android:textColor="@android:color/white" />
 
     <TextView
-        android:id="@+id/atividade_ajuda_texto_autor"
+        android:id="@+id/atividade_ajuda_texto_autor_charles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/atividade_ajuda_imagem_logo_add_ti"
         android:layout_centerHorizontal="true"
-        android:text="@string/autor"
+        android:text="@string/autor_charles"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/atividade_ajuda_texto_autor_paulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/atividade_ajuda_texto_autor_charles"
+        android:layout_centerHorizontal="true"
+        android:text="@string/autor_paulo"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white"  />
 
 </RelativeLayout>
