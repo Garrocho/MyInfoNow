@@ -17,18 +17,7 @@
         android:numColumns="3"
         android:padding="10dp"
         android:stackFromBottom="true"
-        android:stretchMode="columnWidth" />
-    
-    <TextView
-        android:id="@+id/activity_my_current_rotulo_ip_externo"
-        style="@style/rotulo_titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp"
-        android:text="@string/rotulo_endereco_ip_externo"
-        android:textAppearance="?android:attr/textAppearanceLarge" />    
+        android:stretchMode="columnWidth" />    
 
     <TextView
         android:id="@+id/activity_my_current_rotulo_mac"
@@ -50,10 +39,8 @@
         android:layout_below="@+id/activity_my_current_rotulo_mac"
         android:text="@string/ip"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@android:color/white"
-        android:textSize="14pt"
         android:gravity="center"
-        android:textStyle="bold" />
+        style="@style/rotulo_sub_titulo" />
 
     <TextView
         android:id="@+id/activity_my_current_campo_texto_ip_local"
@@ -64,10 +51,8 @@
         android:layout_below="@+id/activity_my_current_rotulo_ip_local"
         android:text="@string/ip"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@android:color/white"
-        android:textSize="14pt"
         android:gravity="center"
-        android:textStyle="bold" />
+        style="@style/rotulo_sub_titulo" />
     
     <TextView
         android:id="@+id/activity_my_current_campo_texto_ip_externo"
@@ -78,10 +63,8 @@
         android:layout_below="@+id/activity_my_current_rotulo_ip_externo"
         android:text="@string/ip"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@android:color/white"
-        android:textSize="14pt"
         android:gravity="center"
-        android:textStyle="bold" />
+        style="@style/rotulo_sub_titulo"/>
 
     <TextView
         android:id="@+id/activity_my_current_rotulo_ip_local"
@@ -94,6 +77,17 @@
         android:layout_marginTop="13dp"
         android:text="@string/rotulo_endereco_ip_local"
         android:gravity="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/activity_my_current_rotulo_ip_externo"
+        style="@style/rotulo_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp"
+        android:text="@string/rotulo_endereco_ip_externo"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
