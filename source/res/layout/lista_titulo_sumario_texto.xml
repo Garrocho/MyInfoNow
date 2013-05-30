@@ -22,19 +22,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/titulo_texto"
-            android:textColor="@color/branco" />
+            style="@style/rotulo_titulo"/>
         
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/sumario_texto"
-            android:visibility="visible"/>
+            style="@style/rotulo_sub_titulo"/>
         
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/texto_texto"
-            android:visibility="visible" />
+            style="@style/rotulo_sub_titulo" />
         
     </LinearLayout>
     
