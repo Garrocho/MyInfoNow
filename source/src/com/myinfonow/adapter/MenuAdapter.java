@@ -1,4 +1,4 @@
-package com.mycurrentip.adapter;
+package com.myinfonow.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,21 +10,21 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.mycurrentip.MyCurrentIP;
-import com.mycurrentip.R;
+import com.myinfonow.R;
+import com.myinfonow.MyInfoNow;
 
 public class MenuAdapter extends BaseAdapter{
 	Context contexto;
-	MyCurrentIP myCurrentIP;
+	MyInfoNow myInfoNow;
 	
-	public MenuAdapter(MyCurrentIP c) {
+	public MenuAdapter(MyInfoNow c) {
 		contexto = (Context)c;
-		myCurrentIP = c;
+		myInfoNow = c;
 	}
 
 	@Override
 	public int getCount() {
-		return myCurrentIP.getNomesMenus().length;
+		return myInfoNow.getNomesMenus().length;
 	}
 
 	@Override
@@ -38,9 +38,9 @@ public class MenuAdapter extends BaseAdapter{
 			view = (View) convertView;
 		}
 		TextView textView = (TextView)view.findViewById(R.id.item_menu_inicial_icone_texto);
-		textView.setText(myCurrentIP.getNomesMenus()[position]);
+		textView.setText(myInfoNow.getNomesMenus()[position]);
 		ImageView imageView = (ImageView)view.findViewById(R.id.item_menu_inicial_icone_imagem);
-		imageView.setImageResource(myCurrentIP.getImagensMenus()[position]);
+		imageView.setImageResource(myInfoNow.getImagensMenus()[position]);
 		imageView.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -50,7 +50,7 @@ public class MenuAdapter extends BaseAdapter{
 				view.startAnimation(fadeOut);
 				view.getAnimation().startNow();
 
-				myCurrentIP.trataEventoMenu(position);
+				myInfoNow.trataEventoMenu(position);
 			}
 		});
 		return view;

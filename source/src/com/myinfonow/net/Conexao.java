@@ -1,4 +1,4 @@
-package com.mycurrentip.net;
+package com.myinfonow.net;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

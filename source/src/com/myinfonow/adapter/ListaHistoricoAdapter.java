@@ -1,4 +1,4 @@
-package com.mycurrentip.adapter;
+package com.myinfonow.adapter;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.mycurrentip.R;
-import com.mycurrentip.classes.Historico;
+import com.myinfonow.R;
+import com.myinfonow.classes.Historico;
 
 public class ListaHistoricoAdapter extends BaseAdapter {
 

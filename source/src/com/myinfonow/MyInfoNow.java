@@ -1,4 +1,4 @@
-package com.mycurrentip;
+package com.myinfonow;
 
 import java.util.HashMap;
 
@@ -20,18 +20,19 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
-import com.mycurrentip.adapter.ListaHistoricoAdapter;
-import com.mycurrentip.adapter.MenuAdapter;
-import com.mycurrentip.classes.Data;
-import com.mycurrentip.classes.Historico;
-import com.mycurrentip.dao.DatabaseHelper;
-import com.mycurrentip.dao.repositorios.RepositorioHistorico;
-import com.mycurrentip.net.Conexao;
-import com.mycurrentip.tarefa.TarefaAtualizaInfo;
-import com.mycurrentip.util.Constantes;
-import com.mycurrentip.util.DialogoAlerta;
+import com.myinfonow.R;
+import com.myinfonow.adapter.ListaHistoricoAdapter;
+import com.myinfonow.adapter.MenuAdapter;
+import com.myinfonow.classes.Data;
+import com.myinfonow.classes.Historico;
+import com.myinfonow.dao.DatabaseHelper;
+import com.myinfonow.dao.repositorios.RepositorioHistorico;
+import com.myinfonow.net.Conexao;
+import com.myinfonow.tarefa.TarefaAtualizaInfo;
+import com.myinfonow.util.Constantes;
+import com.myinfonow.util.DialogoAlerta;
 
-public class MyCurrentIP extends Activity implements IAtualizaInfo {
+public class MyInfoNow extends Activity implements IAtualizaInfo {
 
 	private TabHost tabHost;
 	private GridView gridMenuInicial;
@@ -133,7 +134,7 @@ public class MyCurrentIP extends Activity implements IAtualizaInfo {
 			break;
 		}
 		case 1: {
-			intent = new Intent("mycurrentip_ajuda");
+			intent = new Intent("myinfonow_ajuda");
 			break;
 		}
 		case 2: {
@@ -158,11 +159,11 @@ public class MyCurrentIP extends Activity implements IAtualizaInfo {
 		new AlertDialog.Builder(this)
 		.setIcon(android.R.drawable.ic_dialog_alert)
 		.setTitle("Confirmacao")
-		.setMessage("Deseja Sair do MyCurrentIP?")
+		.setMessage("Deseja Sair do MyInfoNow?")
 		.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				MyCurrentIP.this.finish();
+				MyInfoNow.this.finish();
 			}
 		})
 		.setNegativeButton("Nao", null)

@@ -1,4 +1,4 @@
-package com.mycurrentip.classes;
+package com.myinfonow.classes;
 
 import java.sql.Timestamp;
 

@@ -1,4 +1,4 @@
-package com.mycurrentip;
+package com.myinfonow;
 
 import java.util.HashMap;
 

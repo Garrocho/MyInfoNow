@@ -1,4 +1,4 @@
-package com.mycurrentip.net;
+package com.myinfonow.net;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -20,11 +20,11 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
-import android.net.ParseException;
-import android.util.Log;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import android.net.ParseException;
+import android.util.Log;
 
 public class ClienteHttp {
 

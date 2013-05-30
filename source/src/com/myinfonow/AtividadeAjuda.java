@@ -1,10 +1,12 @@
-package com.mycurrentip;
+package com.myinfonow;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
-public class Ajuda extends Activity {
+import com.myinfonow.R;
+
+public class AtividadeAjuda extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

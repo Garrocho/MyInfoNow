@@ -1,4 +1,4 @@
-package com.mycurrentip.util;
+package com.myinfonow.util;
 
 public class Constantes {
 	

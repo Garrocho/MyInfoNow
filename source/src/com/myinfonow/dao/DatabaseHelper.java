@@ -1,4 +1,4 @@
-package com.mycurrentip.dao;
+package com.myinfonow.dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -7,7 +7,7 @@ public class DatabaseHelper {
 	private SQLHelper sqlHelper;
 	private SQLiteDatabase db;
 
-	private static final String NOME_BANCO = "mycurrentip";
+	private static final String NOME_BANCO = "myinfonow";
 	private static final int VERSAO = 3;
 	private static DatabaseHelper banco;
 

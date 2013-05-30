@@ -1,4 +1,4 @@
-package com.mycurrentip.dao;
+package com.myinfonow.dao;
 
 import java.util.ArrayList;
 import java.util.List;

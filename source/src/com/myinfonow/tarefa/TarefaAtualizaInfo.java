@@ -1,39 +1,39 @@
-package com.mycurrentip.tarefa;
+package com.myinfonow.tarefa;
 
 import java.util.HashMap;
 
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.mycurrentip.MyCurrentIP;
-import com.mycurrentip.net.ClienteHttp;
-import com.mycurrentip.net.Conexao;
-import com.mycurrentip.util.Constantes;
-import com.mycurrentip.util.Enderecos;
-import com.mycurrentip.util.Json.IpExterno;
+import com.myinfonow.MyInfoNow;
+import com.myinfonow.net.ClienteHttp;
+import com.myinfonow.net.Conexao;
+import com.myinfonow.util.Constantes;
+import com.myinfonow.util.Enderecos;
+import com.myinfonow.util.Json.IpExterno;
 
 
 public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<String, String>> {
 
-	private MyCurrentIP myCurrentIP;
+	private MyInfoNow myinfonow;
 	private ClienteHttp clienteHttp;
 	private IpExterno ipExterno;
 
-	public TarefaAtualizaInfo(MyCurrentIP myCurrentIP) {
-		this.myCurrentIP = myCurrentIP;
+	public TarefaAtualizaInfo(MyInfoNow myinfonow) {
+		this.myinfonow = myinfonow;
 	}
 
 	@Override
 	protected void onPreExecute() {
 		// TODO Auto-generated method stub
-		myCurrentIP.comecouExecucao();
+		myinfonow.comecouExecucao();
 		super.onPreExecute();
 	}
 	
 	@Override
 	protected void onProgressUpdate(String... values) {
 		// TODO Auto-generated method stub
-		myCurrentIP.mostrarMensagem(values[0]);
+		myinfonow.mostrarMensagem(values[0]);
 		super.onProgressUpdate(values);
 	}
 	
@@ -55,7 +55,7 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 		publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "\nVerificando Conexao...");
 		
 		
-		if (Conexao.verificaConexao(myCurrentIP)){
+		if (Conexao.verificaConexao(myinfonow)){
 			publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "\nConexao OK\nLoading...");
 			clienteHttp = new ClienteHttp(Constantes.URL_JSON_IP_EXTERNO, "GET");
 			do {
@@ -77,6 +77,6 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 
 	@Override
 	protected void onPostExecute(HashMap<String, String> resposta) {
-		myCurrentIP.terminouExecucao(resposta);
+		myinfonow.terminouExecucao(resposta);
 	}
 }

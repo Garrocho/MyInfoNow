@@ -1,4 +1,4 @@
-package com.mycurrentip.dao.repositorios;
+package com.myinfonow.dao.repositorios;
 
 
 import java.sql.Timestamp;
@@ -13,9 +13,9 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.mycurrentip.classes.Historico;
-import com.mycurrentip.classes.Historico.Historicos;
-import com.mycurrentip.dao.DatabaseHelper;
+import com.myinfonow.classes.Historico;
+import com.myinfonow.classes.Historico.Historicos;
+import com.myinfonow.dao.DatabaseHelper;
 
 public class RepositorioHistorico implements IRepositorio<Historico>{
 	private static final String NOME_TABELA = "historico";

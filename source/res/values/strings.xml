@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MyCurrentIP</string>
+    <string name="app_name">MyInfoNow</string>
     <string name="action_settings">Settings</string>
     <string name="botao_sair">Sair</string>
     <string name="botao_atualizar">Atualizar</string>
@@ -10,7 +10,7 @@
     <string name="rotulo_endereco_ip_externo">Endereço IP Externo</string>
     <string name="rotulo_endereco_mac">Endereço MAC</string>
     <string name="rotulo_icone">Menu</string>
-    <string name="title_activity_ajuda">Ajuda</string>
+    <string name="title_activity_ajuda">MyInfoNow</string>
     <string name="botao_voltar">Voltar</string>
     <string name="autor_charles">Charles Garrocho</string>
     <string name="autor_paulo">Paulo Vitor Francisco</string>

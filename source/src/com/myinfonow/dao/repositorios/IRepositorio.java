@@ -1,4 +1,4 @@
-package com.mycurrentip.dao.repositorios;
+package com.myinfonow.dao.repositorios;
 
 import java.util.List;
 import java.util.Map;
