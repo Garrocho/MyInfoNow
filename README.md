@@ -1,15 +1,16 @@
 MyInfoNow
 ===========
-Aplicativo Android que exibe informações sobre o dispositivo móvel.
+Aplicativo Móvel Android que exibe informações do dispositivo móvel.
 
 ## Introdução #
 O _MyInfoNow_ é um aplicativo móvel Android e open-source desenvolvido utilizando a linguagem de programação Java.
 
 ## Características #
-O Aplicativo Android que exibe o IP local e externo, o endreço MAC da interface de rede. Exibe também a vazão da largura de banda do dispositivo móvel.
+O _MyInfoNow_ é um aplicativo móvel Android que exibe os endereços de ip local e ip externo, o endreço MAC da interface de rede e a vazão da largura de banda do dispositivo móvel.
 
-## Desenvolvedor #
+## Desenvolvedores #
 Charles Tim Batista Garrocho
+
 Paulo Vitor Francisco
 
 ## Screenshots #
