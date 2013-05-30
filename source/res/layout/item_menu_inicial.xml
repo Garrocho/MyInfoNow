@@ -19,6 +19,7 @@
         android:layout_below="@id/item_menu_inicial_icone_imagem"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/white"
-        android:textIsSelectable="false" />
+        android:textIsSelectable="false"
+        style="@style/item_menu" />
 
 </RelativeLayout>
