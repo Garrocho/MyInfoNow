@@ -34,7 +34,7 @@
         android:layout_centerHorizontal="true"
         android:text="@string/autor_charles"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@android:color/white" />
+        style="@style/rotulo_titulo" />
 
     <TextView
         android:id="@+id/atividade_ajuda_texto_autor_paulo"
@@ -44,6 +44,6 @@
         android:layout_centerHorizontal="true"
         android:text="@string/autor_paulo"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@android:color/white"  />
+        style="@style/rotulo_titulo"  />
 
 </RelativeLayout>
