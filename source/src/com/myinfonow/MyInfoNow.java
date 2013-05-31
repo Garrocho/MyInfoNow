@@ -41,6 +41,7 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 	private TextView campoTextoIPLocal;
 	private TextView campoTextoIPExterno;
 	private TextView campoTextoMAC;
+	private TextView campoTextoVazao;
 	private ListView listaHitorico;
 	private RepositorioHistorico repoHistorico;
 	private ProgressDialog dialogoProcesso;
@@ -56,6 +57,7 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 		campoTextoIPLocal = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_local);
 		campoTextoIPExterno = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_externo);
 		campoTextoMAC = (TextView)findViewById(R.id.activity_my_current_campo_texto_mac);
+		campoTextoVazao = (TextView)findViewById(R.id.activity_my_current_campo_texto_vazao);
 
 		tabHost = (TabHost)findViewById(R.id.activity_my_current_ip_tab_host);
 		tabHost.setup();
@@ -107,6 +109,7 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 		super.onResume();
 	}
 	
+	@SuppressWarnings("deprecation")
 	public void atualizaInfo(){
 		
 		Display display = ((WindowManager) getSystemService(WINDOW_SERVICE)).getDefaultDisplay();
@@ -204,6 +207,14 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 		return repoHistorico;
 	}
 
+	public TextView getCampoTextoVazao() {
+		return campoTextoVazao;
+	}
+
+	public void setCampoTextoVazao(TextView campoTextoVazao) {
+		this.campoTextoVazao = campoTextoVazao;
+	}
+
 	@Override
 	public void comecouExecucao() {
 		// TODO Auto-generated method stub
@@ -224,14 +235,17 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 		String ip_local = enderecos.get(Constantes.IP_LOCAL);
 		String ip_externo = enderecos.get(Constantes.IP_EXTERNO);
 		String mac = enderecos.get(Constantes.MAC);
+		String vazao = enderecos.get(Constantes.VAZAO);
 		getCampoTextoIP().setText(ip_local);
 		getCampoTextoIPExterno().setText(ip_externo);
 		getCampoTextoMAC().setText(mac);
+		getCampoTextoVazao().setText(vazao);
 
 		Historico historico = new Historico();
 		historico.setIp_local(ip_local);
 		historico.setIp_externo(ip_externo);
 		historico.setMac(mac);
+		historico.setVazao(vazao);
 		historico.setData_hora(Data.getDataHoraAtual());
 		getRepoHistorico().insert(historico);
 	}

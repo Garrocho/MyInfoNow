@@ -14,5 +14,22 @@ public class Json {
 			this.ip = ip;
 		}
 	}
+	
+	public static class Vazao{
+		
+		public String vazao;
+		
+		public Vazao(String vazao) {
+			this.vazao = vazao;
+		}
+
+		public String getVazao() {
+			return vazao;
+		}
+
+		public void setVazao(String vazao) {
+			this.vazao = vazao;
+		}
+	}	
 
 }
