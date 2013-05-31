@@ -47,19 +47,18 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 		String ip_externo = "Sem Conexao"; 
 		String taxa_conexao = "0.0";
 		
-		publishProgress("Loading...");
+		publishProgress("Carregando Ip Local...");
 		HashMap<String, String> enderecos = new HashMap<String, String>();
 		ip_interno = Enderecos.getEnderecoIP(argv[0]);
 		enderecos.put(Constantes.IP_LOCAL, ip_interno);
 		
-		publishProgress("Ip local: " + ip_interno + "\nLoading...");
+		publishProgress("Ip Local: " + ip_interno + "\nCarregando MAC...");
 		mac = Enderecos.getEnderecoMAC();
 		enderecos.put(Constantes.MAC, mac);
-		publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "\nVerificando Conexao...");
-		
+		publishProgress("Ip Local: " + ip_interno + "\nMac: " + mac + "\nVerificando Conexao...");
 		
 		if (Conexao.verificaConexao(myinfonow)){
-			publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "\nConexao OK\nLoading... (Ip externo)");
+			publishProgress("Ip Local: " + ip_interno + "\nMAC: " + mac + "\nConexao OK\nCarregando Ip Externo...");
 			clienteHttp = new ClienteHttp(Constantes.URL_JSON_IP_EXTERNO, "GET");
 			do {
 				executeCount++;
@@ -71,13 +70,13 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 			if (codResposta == 200) {
 				ipExterno = (IpExterno)clienteHttp.obterJson(IpExterno.class);
 				ip_externo = ipExterno.getIp();
-				publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "\nIp Externo: " + ip_externo);
+				publishProgress("Ip local: " + ip_interno + "\nMAC: " + mac + "\nIp Externo: " + ip_externo);
 			}
 			enderecos.put(Constantes.IP_EXTERNO, ip_externo);
 			
 			executeCount = 0;
-			publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "\nIp Externo: " + ip_externo + 
-					"\nLoading... (Taxa de Conexão )");
+			publishProgress("Ip Local: " + ip_interno + "\nMAC: " + mac + "\nIp Externo: " + ip_externo + 
+					"\nCarregando Taxa de Conexao...");
 			clienteHttp = new ClienteHttp(Constantes.URL_TAXA_CONEXAO, "GET");
 			do {
 				executeCount++;
@@ -89,7 +88,7 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 			if (codResposta == 200) {
 				vazao = new Vazao(clienteHttp.obterHtml(Vazao.class));
 				taxa_conexao = vazao.getVazao();
-				publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "Ip Externo: " + ip_externo + 
+				publishProgress("Ip local: " + ip_interno + "\nMAC: " + mac + "Ip Externo: " + ip_externo + 
 						"\nTaxa de Conexao" + taxa_conexao + "Mbps");
 			}			
 		}
