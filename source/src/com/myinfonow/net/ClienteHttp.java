@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,11 +22,12 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import android.net.ParseException;
 import android.util.Log;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.myinfonow.util.Constantes;
 
 public class ClienteHttp {
 
@@ -113,5 +116,28 @@ public class ClienteHttp {
 			Log.d("IOException: ", e.toString());
 		}
 		return json;
+	}
+	
+	public String obterHtml(Class<?> classe){
+
+		Object html = null;
+		
+		try{
+			URL url = new URL(Constantes.URL_TAXA_CONEXAO);
+			URLConnection urlConnection = url.openConnection();
+
+			InputStreamReader inputReader = new InputStreamReader(urlConnection.getInputStream());
+			BufferedReader bufferedReader = new BufferedReader(inputReader);
+			String linha;
+			while ( (linha = bufferedReader.readLine()) != null){
+				if(linha.contains("Mbps</font></b>")){
+					int indice = linha.lastIndexOf(" ");
+					html = linha.substring(0, indice);
+				}
+			}
+			
+		} catch (Exception e) {}		
+		
+		return html.toString() + " Mbps";
 	}
 }
