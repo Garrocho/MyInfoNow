@@ -6,7 +6,7 @@
     <string name="botao_sair">Sair</string>
     <string name="botao_atualizar">Atualizar</string>
     <string name="ip">192.168.100.095</string>
-    <string name="vazao">0.0</string>
+    <string name="vazao">0.0 Mbps</string>
     <string name="rotulo_endereco_ip_local">Endereço IP Local</string>
     <string name="rotulo_endereco_ip_externo">Endereço IP Externo</string>
     <string name="rotulo_endereco_mac">Endereço MAC</string>
