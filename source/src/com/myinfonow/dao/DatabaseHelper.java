@@ -25,7 +25,7 @@ public class DatabaseHelper {
 		"ip_externo VARCHAR(100), " +
 		"mac VARCHAR(100), " +
 		"vazao VARCHAR(100), " +
-		"data_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
+		"data_hora TIMESTAMP, " +
 		"PRIMARY KEY (ip_local, ip_externo, data_hora)" +
 		");" +
 	""

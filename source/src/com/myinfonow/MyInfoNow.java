@@ -247,6 +247,7 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 		historico.setMac(mac);
 		historico.setVazao(vazao);
 		historico.setData_hora(Data.getDataHoraAtual());
+		Log.d("data--", Data.getDataHoraAtual().toString());
 		getRepoHistorico().insert(historico);
 	}
 }
