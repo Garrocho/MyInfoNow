@@ -14,13 +14,17 @@ Charles Tim Batista Garrocho
 Paulo Vitor Francisco
 
 ## Screenshots #
-### Tela Inicial no modo Vertical:
+### Tela Minhas Informações:
 
-![alt text](https://raw.github.com/CharlesGarrocho/MyInfoNow/master/samples/tela_inicial_vertical.png "Tela Inicial Vertical")
+![alt text](https://raw.github.com/CharlesGarrocho/MyInfoNow/master/samples/tela_minhas_informacoes.png "Tela Minhas Informações")
 
-### Tela Inicial no modo Horizontal:
+### Tela Carregando Informações:
 
-![alt text](https://raw.github.com/CharlesGarrocho/MyInfoNow/master/samples/tela_inicial_horizontal.png "Tela Inicial Horizontal")
+![alt text](https://raw.github.com/CharlesGarrocho/MyInfoNow/master/samples/tela_carregando_informacoes.png "Tela Carregando Informações")
+
+### Tela Histórico:
+
+![alt text](https://raw.github.com/CharlesGarrocho/MyInfoNow/master/samples/tela_historico.png "Tela Histórico")
 
 ### Tela Ajuda:
 
