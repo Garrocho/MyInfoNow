@@ -90,4 +90,27 @@
         android:text="@string/rotulo_endereco_ip_externo"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <TextView
+        android:id="@+id/activity_my_current_campo_texto_vazao"
+        style="@style/rotulo_sub_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_my_current_rotulo_vazao"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="3dp"
+        android:text="@string/vazao"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/activity_my_current_rotulo_vazao"
+        style="@style/rotulo_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/activity_my_current_ip_menu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp"
+        android:text="@string/rotulo_vazao"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
 </RelativeLayout>
