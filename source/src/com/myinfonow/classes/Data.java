@@ -7,7 +7,7 @@ import java.util.Calendar;
 public class Data {
 	
 	public static Timestamp getDataHoraAtual(){
-		int time = (int) (System.currentTimeMillis());
+		long time = System.currentTimeMillis();
 		return new Timestamp(time);
 	}
 	
