@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/aba_ips_anteriores" >
+    android:id="@+id/aba_historico" >
 
     <ListView
-        android:id="@+id/aba_ips_anteriores_lista"
+        android:id="@+id/aba_historico_lista"
         android:layout_marginTop="60dp"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

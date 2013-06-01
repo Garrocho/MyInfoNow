@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TabHost xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MyCurrentIP"
-    android:id="@+id/activity_my_current_ip_tab_host"
+    tools:context=".MyInfoNow"
+    android:id="@+id/atividade_my_info_now"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/background" >
@@ -17,8 +17,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" >
 
-        <include layout="@layout/aba_ip_atual" /> 
+        <include layout="@layout/aba_minhas_informacoes" /> 
         
-        <include layout="@layout/aba_ips_anteriores" />
+        <include layout="@layout/aba_historico" />
     </FrameLayout>
 </TabHost>

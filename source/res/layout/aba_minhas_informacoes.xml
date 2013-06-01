@@ -1,40 +1,40 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/aba_ip_atual"
+    android:id="@+id/aba_minhas_informacoes"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
         
     <TextView
-        android:id="@+id/activity_my_current_campo_texto_ip_externo"
+        android:id="@+id/aba_minhas_informacoes_campo_texto_ip_externo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/activity_my_current_rotulo_ip_externo"
+        android:layout_below="@+id/aba_minhas_informacoes_check_box_ip_externo"
         android:text="@string/ip"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:gravity="center"
         style="@style/rotulo_sub_titulo" />
         
     <TextView
-        android:id="@+id/activity_my_current_campo_texto_mac"
+        android:id="@+id/aba_minhas_informacoes_campo_texto_mac"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/activity_my_current_rotulo_mac"
+        android:layout_below="@+id/aba_minhas_informacoes_check_box_mac"
         android:text="@string/ip"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:gravity="center"
         style="@style/rotulo_sub_titulo" />
         
     <TextView
-        android:id="@+id/activity_my_current_campo_texto_vazao"
+        android:id="@+id/aba_minhas_informacoes_campo_texto_vazao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/activity_my_current_rotulo_vazao"
+        android:layout_below="@+id/aba_minhas_informacoes_check_box_vazao"
         android:layout_marginTop="3dp"
         android:text="@string/vazao"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -42,21 +42,21 @@
         style="@style/rotulo_sub_titulo" />
         
     <CheckBox
-        android:id="@+id/activity_my_current_rotulo_ip_externo"
+        android:id="@+id/aba_minhas_informacoes_check_box_ip_externo"
         style="@style/rotulo_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/activity_my_current_campo_texto_ip_local"
+        android:layout_below="@+id/aba_minhas_informacoes_campo_texto_ip_local"
         android:layout_centerHorizontal="true"
         android:text="@string/rotulo_endereco_ip_externo"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <GridView
-        android:id="@+id/activity_my_current_ip_menu"
+        android:id="@+id/aba_minhas_informacoes_menu"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/activity_my_current_campo_texto_vazao"
+        android:layout_below="@+id/aba_minhas_informacoes_campo_texto_vazao"
         android:columnWidth="130dp"
         android:gravity="center"
         android:horizontalSpacing="10dp"
@@ -67,38 +67,38 @@
     </GridView>
 
     <CheckBox
-        android:id="@+id/activity_my_current_ip_check_box_ip_local"
+        android:id="@+id/aba_minhas_informacoes_check_box_ip_local"
         style="@style/rotulo_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/activity_my_current_campo_texto_ip_local"
-        android:layout_alignLeft="@+id/activity_my_current_rotulo_ip_externo"
+        android:layout_alignBottom="@+id/aba_minhas_informacoes_campo_texto_ip_local"
+        android:layout_alignLeft="@+id/aba_minhas_informacoes_check_box_ip_externo"
         android:layout_marginBottom="25dp"
         android:gravity="center"
         android:text="@string/rotulo_endereco_ip_local" />
 
     <CheckBox
-        android:id="@+id/activity_my_current_rotulo_vazao"
+        android:id="@+id/aba_minhas_informacoes_check_box_vazao"
         style="@style/rotulo_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/activity_my_current_rotulo_ip_externo"
-        android:layout_below="@+id/activity_my_current_campo_texto_mac"
+        android:layout_alignLeft="@+id/aba_minhas_informacoes_check_box_ip_externo"
+        android:layout_below="@+id/aba_minhas_informacoes_campo_texto_mac"
         android:text="@string/rotulo_vazao"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <CheckBox
-        android:id="@+id/activity_my_current_rotulo_mac"
+        android:id="@+id/aba_minhas_informacoes_check_box_mac"
         style="@style/rotulo_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/activity_my_current_rotulo_vazao"
-        android:layout_below="@+id/activity_my_current_campo_texto_ip_externo"
+        android:layout_alignLeft="@+id/aba_minhas_informacoes_check_box_vazao"
+        android:layout_below="@+id/aba_minhas_informacoes_campo_texto_ip_externo"
         android:text="@string/rotulo_endereco_mac"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/activity_my_current_campo_texto_ip_local"
+        android:id="@+id/aba_minhas_informacoes_campo_texto_ip_local"
         style="@style/rotulo_sub_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
