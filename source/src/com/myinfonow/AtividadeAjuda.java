@@ -11,7 +11,7 @@ public class AtividadeAjuda extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_ajuda);
+		setContentView(R.layout.atividade_ajuda);
 	}
 	
 	public void voltar(View componente) {

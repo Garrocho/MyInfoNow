@@ -14,13 +14,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
+import android.widget.CheckBox;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
-import com.myinfonow.R;
 import com.myinfonow.adapter.ListaHistoricoAdapter;
 import com.myinfonow.adapter.MenuAdapter;
 import com.myinfonow.classes.Data;
@@ -42,6 +42,10 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 	private TextView campoTextoIPExterno;
 	private TextView campoTextoMAC;
 	private TextView campoTextoVazao;
+	private CheckBox checkBoxIpLocal;
+	private CheckBox checkBoxMac;
+	private CheckBox checkBoxIpExterno;
+	private CheckBox checkBoxVazao;
 	private ListView listaHitorico;
 	private RepositorioHistorico repoHistorico;
 	private ProgressDialog dialogoProcesso;
@@ -50,16 +54,21 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_my_current_ip);
+		setContentView(R.layout.atividade_my_info_now);
 
 		this.repoHistorico = new RepositorioHistorico(this);
 
-		campoTextoIPLocal = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_local);
-		campoTextoIPExterno = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_externo);
-		campoTextoMAC = (TextView)findViewById(R.id.activity_my_current_campo_texto_mac);
-		campoTextoVazao = (TextView)findViewById(R.id.activity_my_current_campo_texto_vazao);
+		campoTextoIPLocal = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_ip_local);
+		campoTextoIPExterno = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_ip_externo);
+		campoTextoMAC = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_mac);
+		campoTextoVazao = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_vazao);
 
-		tabHost = (TabHost)findViewById(R.id.activity_my_current_ip_tab_host);
+		checkBoxIpLocal = (CheckBox) findViewById(R.id.aba_minhas_informacoes_check_box_ip_local);
+		checkBoxIpExterno = (CheckBox) findViewById(R.id.aba_minhas_informacoes_check_box_ip_externo);
+		checkBoxMac = (CheckBox) findViewById(R.id.aba_minhas_informacoes_check_box_mac);
+		checkBoxVazao = (CheckBox) findViewById(R.id.aba_minhas_informacoes_check_box_vazao);
+
+		tabHost = (TabHost)findViewById(R.id.atividade_my_info_now);
 		tabHost.setup();
 
 		TabSpec spec1 = tabHost.newTabSpec("Minhas Informacoes");
@@ -68,16 +77,16 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 		spec1.setIndicator("Minhas Informacoes");
 		spec2.setIndicator("Historico");
 
-		spec1.setContent(R.id.aba_ip_atual);
-		spec2.setContent(R.id.aba_ips_anteriores);
+		spec1.setContent(R.id.aba_minhas_informacoes);
+		spec2.setContent(R.id.aba_historico);
 
 		tabHost.addTab(spec1);
 		tabHost.addTab(spec2);
 
-		gridMenuInicial = (GridView)findViewById(R.id.activity_my_current_ip_menu);
+		gridMenuInicial = (GridView)findViewById(R.id.aba_minhas_informacoes_menu);
 		gridMenuInicial.setAdapter(new MenuAdapter(this));
 
-		listaHitorico = (ListView)findViewById(R.id.aba_ips_anteriores_lista);
+		listaHitorico = (ListView)findViewById(R.id.aba_historico_lista);
 
 		for(int i=0;i< tabHost.getTabWidget().getChildCount();i++) 
 		{ 
