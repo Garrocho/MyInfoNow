@@ -35,7 +35,7 @@ public class RepositorioHistorico implements IRepositorio<Historico>{
 		valores.put(Historicos.IP_EXTERNO, Historico.getIp_externo());
 		valores.put(Historicos.MAC, Historico.getMac());
 		valores.put(Historicos.VAZAO, Historico.getVazao());
-		valores.put(Historicos.DATA_HORA, Historico.getData_hora().toString());
+		valores.put(Historicos.DATA_HORA, Historico.getData_hora().getTime());
 		return valores;
 	}
 
