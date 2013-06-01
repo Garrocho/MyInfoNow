@@ -28,7 +28,7 @@ import com.myinfonow.classes.Historico;
 import com.myinfonow.dao.DatabaseHelper;
 import com.myinfonow.dao.repositorios.RepositorioHistorico;
 import com.myinfonow.net.Conexao;
-import com.myinfonow.tarefa.TarefaAtualizaInfo;
+import com.myinfonow.net.tarefa.TarefaAtualizaInfo;
 import com.myinfonow.util.Constantes;
 import com.myinfonow.util.DialogoAlerta;
 

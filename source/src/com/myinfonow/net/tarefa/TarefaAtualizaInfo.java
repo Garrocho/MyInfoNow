@@ -1,4 +1,4 @@
-package com.myinfonow.tarefa;
+package com.myinfonow.net.tarefa;
 
 import java.util.HashMap;
 
