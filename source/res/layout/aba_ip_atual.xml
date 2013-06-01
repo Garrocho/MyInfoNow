@@ -3,29 +3,6 @@
     android:id="@+id/aba_ip_atual"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    
-    <TextView
-        android:id="@+id/activity_my_current_rotulo_ip_local"
-        style="@style/rotulo_titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/activity_my_current_rotulo_vazao"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="104dp"
-        android:gravity="center"
-        android:text="@string/rotulo_endereco_ip_local"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/activity_my_current_campo_texto_ip_local"
-        style="@style/rotulo_sub_titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/activity_my_current_rotulo_ip_local"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="@string/ip"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
         
     <TextView
         android:id="@+id/activity_my_current_campo_texto_ip_externo"
@@ -64,7 +41,7 @@
         android:gravity="center"
         style="@style/rotulo_sub_titulo" />
         
-    <TextView
+    <CheckBox
         android:id="@+id/activity_my_current_rotulo_ip_externo"
         style="@style/rotulo_titulo"
         android:layout_width="wrap_content"
@@ -72,27 +49,6 @@
         android:layout_below="@+id/activity_my_current_campo_texto_ip_local"
         android:layout_centerHorizontal="true"
         android:text="@string/rotulo_endereco_ip_externo"
-        android:textAppearance="?android:attr/textAppearanceLarge" />        
-        
-    <TextView
-        android:id="@+id/activity_my_current_rotulo_mac"
-        style="@style/rotulo_titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/activity_my_current_rotulo_ip_externo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:text="@string/rotulo_endereco_mac"
-        android:textAppearance="?android:attr/textAppearanceLarge" />        
-
-    <TextView
-        android:id="@+id/activity_my_current_rotulo_vazao"
-        style="@style/rotulo_titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/activity_my_current_campo_texto_mac"
-        android:layout_centerHorizontal="true"
-        android:text="@string/rotulo_vazao"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <GridView
@@ -109,5 +65,48 @@
         android:stackFromBottom="true"
         android:stretchMode="columnWidth" >
     </GridView>
+
+    <CheckBox
+        android:id="@+id/activity_my_current_ip_check_box_ip_local"
+        style="@style/rotulo_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/activity_my_current_campo_texto_ip_local"
+        android:layout_alignLeft="@+id/activity_my_current_rotulo_ip_externo"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:text="@string/rotulo_endereco_ip_local" />
+
+    <CheckBox
+        android:id="@+id/activity_my_current_rotulo_vazao"
+        style="@style/rotulo_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/activity_my_current_rotulo_ip_externo"
+        android:layout_below="@+id/activity_my_current_campo_texto_mac"
+        android:text="@string/rotulo_vazao"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <CheckBox
+        android:id="@+id/activity_my_current_rotulo_mac"
+        style="@style/rotulo_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/activity_my_current_rotulo_vazao"
+        android:layout_below="@+id/activity_my_current_campo_texto_ip_externo"
+        android:text="@string/rotulo_endereco_mac"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/activity_my_current_campo_texto_ip_local"
+        style="@style/rotulo_sub_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="84dp"
+        android:gravity="center"
+        android:text="@string/ip"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
