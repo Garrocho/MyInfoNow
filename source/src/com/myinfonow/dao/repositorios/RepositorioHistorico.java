@@ -29,18 +29,18 @@ public class RepositorioHistorico implements IRepositorio<Historico>{
 		db = DatabaseHelper.getInstance(context).getDb();
 	}
 
-	public ContentValues createContentValues(Historico Historico){
+	public ContentValues createContentValues(Historico historico){
 		ContentValues valores = new ContentValues();
-		valores.put(Historicos.IP_LOCAL, Historico.getIp_local());
-		valores.put(Historicos.IP_EXTERNO, Historico.getIp_externo());
-		valores.put(Historicos.MAC, Historico.getMac());
-		valores.put(Historicos.VAZAO, Historico.getVazao());
-		valores.put(Historicos.DATA_HORA, Historico.getData_hora().getTime());
+		valores.put(Historicos.IP_LOCAL, historico.getIp_local());
+		valores.put(Historicos.IP_EXTERNO, historico.getIp_externo());
+		valores.put(Historicos.MAC, historico.getMac());
+		valores.put(Historicos.VAZAO, historico.getVazao());
+		valores.put(Historicos.DATA_HORA, historico.getData_hora().getTime());
 		return valores;
 	}
 
-	public long insert(Historico Historico){
-		ContentValues valores = createContentValues(Historico);
+	public long insert(Historico historico){
+		ContentValues valores = createContentValues(historico);
 
 		return db.insert(NOME_TABELA, "", valores);
 	}
@@ -60,7 +60,7 @@ public class RepositorioHistorico implements IRepositorio<Historico>{
 	}
 
 	public Cursor getCursor(){
-		String orderBy = Historicos.DATA_HORA + " ASC";
+		String orderBy = Historicos.DATA_HORA + " DESC";
 		try{
 			return db.query(NOME_TABELA, Historicos.COLUNAS, null, null, null, null, orderBy);
 		}catch(SQLException e){
