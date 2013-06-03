@@ -43,10 +43,6 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 	private TextView campoTextoIPExterno;
 	private TextView campoTextoMAC;
 	private TextView campoTextoVazao;
-	private CheckBox checkBoxIpLocal;
-	private CheckBox checkBoxMac;
-	private CheckBox checkBoxIpExterno;
-	private CheckBox checkBoxVazao;
 	private ListView listaHitorico;
 	private RepositorioHistorico repoHistorico;
 	private ProgressDialog dialogoProcesso;
@@ -56,38 +52,22 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-<<<<<<< HEAD
 		setContentView(R.layout.atividade_my_info_now);
-=======
-		setContentView(R.layout.activity_my_current_ip);
 		
 		listaCheckBox = new ArrayList<CheckBox>();
->>>>>>> 1bac6d5a06398feec43741296f6234053b9ec660
 
-		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_local));
-		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_externo));
-		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_mac));
-		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_vazao));
+
+		listaCheckBox.add((CheckBox)findViewById(R.id.aba_minhas_informacoes_check_box_ip_local));
+		listaCheckBox.add((CheckBox)findViewById(R.id.aba_minhas_informacoes_check_box_ip_externo));
+		listaCheckBox.add((CheckBox)findViewById(R.id.aba_minhas_informacoes_check_box_mac));
+		listaCheckBox.add((CheckBox)findViewById(R.id.aba_minhas_informacoes_check_box_vazao));
 		
 		this.repoHistorico = new RepositorioHistorico(this);
-<<<<<<< HEAD
 
 		campoTextoIPLocal = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_ip_local);
 		campoTextoIPExterno = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_ip_externo);
 		campoTextoMAC = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_mac);
 		campoTextoVazao = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_vazao);
-=======
-				
-		campoTextoIPLocal = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_local);
-		campoTextoIPExterno = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_externo);
-		campoTextoMAC = (TextView)findViewById(R.id.activity_my_current_campo_texto_mac);
-		campoTextoVazao = (TextView)findViewById(R.id.activity_my_current_campo_texto_vazao);
->>>>>>> 1bac6d5a06398feec43741296f6234053b9ec660
-
-		checkBoxIpLocal = (CheckBox) findViewById(R.id.aba_minhas_informacoes_check_box_ip_local);
-		checkBoxIpExterno = (CheckBox) findViewById(R.id.aba_minhas_informacoes_check_box_ip_externo);
-		checkBoxMac = (CheckBox) findViewById(R.id.aba_minhas_informacoes_check_box_mac);
-		checkBoxVazao = (CheckBox) findViewById(R.id.aba_minhas_informacoes_check_box_vazao);
 
 		tabHost = (TabHost)findViewById(R.id.atividade_my_info_now);
 		tabHost.setup();

@@ -7,10 +7,6 @@ import java.util.Calendar;
 public class Data {
 	
 	public static Timestamp getDataHoraAtual(){
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4d1afef6272c3b7e70175a9e71b1e6223af6272b
 		long time = System.currentTimeMillis();
 		return new Timestamp(time);
 	}
@@ -167,19 +163,6 @@ public class Data {
 		}
 		
 		return stringDia + separador + stringMes + separador + String.valueOf(ano);
-<<<<<<< HEAD
-=======
-		Calendar c = Calendar.getInstance();
-        int ano = c.get(Calendar.YEAR);
-        int mes = c.get(Calendar.MONTH)+1;
-        int dia = c.get(Calendar.DAY_OF_MONTH);
-        int hora = c.get(Calendar.HOUR_OF_DAY);
-        int minuto = c.get(Calendar.MINUTE);
-        Log.w("Data Atual", "Ano: " + ano + " Mês: " + mes + " Dia: " + dia + " Hora: " + hora + " Minutos: " + minuto );
-		return new Timestamp(c.getTimeInMillis());
->>>>>>> 1bac6d5a06398feec43741296f6234053b9ec660
-=======
->>>>>>> 4d1afef6272c3b7e70175a9e71b1e6223af6272b
 	}
 	
 }
