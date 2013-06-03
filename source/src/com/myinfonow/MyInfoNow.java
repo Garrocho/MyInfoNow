@@ -1,5 +1,6 @@
 package com.myinfonow;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import android.app.Activity;
@@ -49,19 +50,39 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 	private ListView listaHitorico;
 	private RepositorioHistorico repoHistorico;
 	private ProgressDialog dialogoProcesso;
+	private ArrayList<CheckBox> listaCheckBox;
 	private int orientacao = 500;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+<<<<<<< HEAD
 		setContentView(R.layout.atividade_my_info_now);
+=======
+		setContentView(R.layout.activity_my_current_ip);
+		
+		listaCheckBox = new ArrayList<CheckBox>();
+>>>>>>> 1bac6d5a06398feec43741296f6234053b9ec660
 
+		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_local));
+		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_externo));
+		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_mac));
+		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_vazao));
+		
 		this.repoHistorico = new RepositorioHistorico(this);
+<<<<<<< HEAD
 
 		campoTextoIPLocal = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_ip_local);
 		campoTextoIPExterno = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_ip_externo);
 		campoTextoMAC = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_mac);
 		campoTextoVazao = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_vazao);
+=======
+				
+		campoTextoIPLocal = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_local);
+		campoTextoIPExterno = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_externo);
+		campoTextoMAC = (TextView)findViewById(R.id.activity_my_current_campo_texto_mac);
+		campoTextoVazao = (TextView)findViewById(R.id.activity_my_current_campo_texto_vazao);
+>>>>>>> 1bac6d5a06398feec43741296f6234053b9ec660
 
 		checkBoxIpLocal = (CheckBox) findViewById(R.id.aba_minhas_informacoes_check_box_ip_local);
 		checkBoxIpExterno = (CheckBox) findViewById(R.id.aba_minhas_informacoes_check_box_ip_externo);
@@ -224,6 +245,14 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 		this.campoTextoVazao = campoTextoVazao;
 	}
 
+	public ArrayList<CheckBox> getListaCheckBox() {
+		return listaCheckBox;
+	}
+
+	public void setListaCheckBox(ArrayList<CheckBox> listaCheckBox) {
+		this.listaCheckBox = listaCheckBox;
+	}
+
 	@Override
 	public void comecouExecucao() {
 		// TODO Auto-generated method stub
@@ -256,6 +285,7 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 		historico.setMac(mac);
 		historico.setVazao(vazao);
 		historico.setData_hora(Data.getDataHoraAtual());
+		Log.d("data--", Data.getDataHoraAtual().toString());
 		getRepoHistorico().insert(historico);
 	}
 }

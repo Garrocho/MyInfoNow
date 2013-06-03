@@ -1,12 +1,14 @@
 package com.myinfonow.classes;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Calendar;
+
+import android.util.Log;
 
 public class Data {
 	
 	public static Timestamp getDataHoraAtual(){
+<<<<<<< HEAD
 		long time = System.currentTimeMillis();
 		return new Timestamp(time);
 	}
@@ -163,6 +165,16 @@ public class Data {
 		}
 		
 		return stringDia + separador + stringMes + separador + String.valueOf(ano);
+=======
+		Calendar c = Calendar.getInstance();
+        int ano = c.get(Calendar.YEAR);
+        int mes = c.get(Calendar.MONTH)+1;
+        int dia = c.get(Calendar.DAY_OF_MONTH);
+        int hora = c.get(Calendar.HOUR_OF_DAY);
+        int minuto = c.get(Calendar.MINUTE);
+        Log.w("Data Atual", "Ano: " + ano + " Mês: " + mes + " Dia: " + dia + " Hora: " + hora + " Minutos: " + minuto );
+		return new Timestamp(c.getTimeInMillis());
+>>>>>>> 1bac6d5a06398feec43741296f6234053b9ec660
 	}
 	
 }
