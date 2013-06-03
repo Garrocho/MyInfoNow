@@ -43,6 +43,7 @@
         
     <CheckBox
         android:id="@+id/aba_minhas_informacoes_check_box_ip_externo"
+        android:checked="true"
         style="@style/rotulo_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,43 +67,9 @@
         android:stretchMode="columnWidth" >
     </GridView>
     
-	<CheckBox
-	    android:id="@+id/checkBox_my_current_ip_local"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignBaseline="@+id/activity_my_current_rotulo_ip_local"
-	    android:layout_alignBottom="@+id/activity_my_current_rotulo_ip_local"
-	    android:layout_marginRight="23dp"
-	    android:checked="True"
-	    android:layout_toLeftOf="@+id/activity_my_current_rotulo_ip_externo" />    
-
-    <CheckBox
-        android:id="@+id/checkBox_my_current_ip_externo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/activity_my_current_rotulo_ip_externo"
-        android:layout_alignBottom="@+id/activity_my_current_rotulo_ip_externo"
-        android:checked="True"
-        android:layout_alignLeft="@+id/checkBox_my_current_ip_local" />
-    
-	<CheckBox
-        android:id="@+id/checkBox_my_current_ip_mac"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/activity_my_current_rotulo_mac"
-        android:layout_alignBottom="@+id/activity_my_current_rotulo_mac"
-        android:checked="True"
-        android:layout_alignLeft="@+id/checkBox_my_current_ip_externo" />
-    
-	<CheckBox
-        android:id="@+id/checkBox_my_current_ip_vazao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/checkBox_my_current_ip_mac"
-        android:layout_below="@+id/activity_my_current_campo_texto_mac" />
-
     <CheckBox
         android:id="@+id/aba_minhas_informacoes_check_box_ip_local"
+        android:checked="true"
         style="@style/rotulo_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -124,6 +91,7 @@
 
     <CheckBox
         android:id="@+id/aba_minhas_informacoes_check_box_mac"
+        android:checked="true"
         style="@style/rotulo_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
