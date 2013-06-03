@@ -45,8 +45,8 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 		int executeCount = 0;
 		String ip_interno = "0.0.0.0";
 		String mac = "00:00:00:00:00:00";
-		String ip_externo = "Sem Conexao"; 
-		String taxa_conexao = "0.0";
+		String ip_externo = "0.0.0.0"; 
+		String taxa_conexao = "0.0 Mbps";
 		
 		HashMap<String, String> enderecos = new HashMap<String, String>();
 		
