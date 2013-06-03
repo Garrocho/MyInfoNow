@@ -1,6 +1,8 @@
 package com.myinfonow;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -14,6 +16,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
+import android.widget.CheckBox;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TabHost;
@@ -45,6 +48,7 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 	private ListView listaHitorico;
 	private RepositorioHistorico repoHistorico;
 	private ProgressDialog dialogoProcesso;
+	private ArrayList<CheckBox> listaCheckBox;
 	private int orientacao = 500;
 
 	@Override
@@ -53,11 +57,20 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 		setContentView(R.layout.activity_my_current_ip);
 
 		this.repoHistorico = new RepositorioHistorico(this);
-
-		campoTextoIPLocal = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_local);
-		campoTextoIPExterno = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_externo);
-		campoTextoMAC = (TextView)findViewById(R.id.activity_my_current_campo_texto_mac);
-		campoTextoVazao = (TextView)findViewById(R.id.activity_my_current_campo_texto_vazao);
+		
+		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_local));
+		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_externo));
+		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_mac));
+		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_vazao));
+		
+		if(listaCheckBox.get(0).isSelected())
+			campoTextoIPLocal = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_local);
+		if(listaCheckBox.get(1).isSelected())
+			campoTextoIPExterno = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_externo);
+		if(listaCheckBox.get(2).isSelected())
+			campoTextoMAC = (TextView)findViewById(R.id.activity_my_current_campo_texto_mac);
+		if(listaCheckBox.get(3).isSelected())
+			campoTextoVazao = (TextView)findViewById(R.id.activity_my_current_campo_texto_vazao);
 
 		tabHost = (TabHost)findViewById(R.id.activity_my_current_ip_tab_host);
 		tabHost.setup();
