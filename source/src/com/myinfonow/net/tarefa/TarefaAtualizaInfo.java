@@ -2,6 +2,8 @@ package com.myinfonow.net.tarefa;
 
 import java.util.HashMap;
 
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.AsyncTask;
 import android.util.Log;
 
