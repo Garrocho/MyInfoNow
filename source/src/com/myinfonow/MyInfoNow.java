@@ -2,7 +2,6 @@ package com.myinfonow;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -23,7 +22,6 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
-import com.myinfonow.R;
 import com.myinfonow.adapter.ListaHistoricoAdapter;
 import com.myinfonow.adapter.MenuAdapter;
 import com.myinfonow.classes.Data;
@@ -55,22 +53,20 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_current_ip);
-
-		this.repoHistorico = new RepositorioHistorico(this);
 		
+		listaCheckBox = new ArrayList<CheckBox>();
+
 		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_local));
 		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_externo));
 		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_mac));
 		listaCheckBox.add((CheckBox)findViewById(R.id.checkBox_my_current_ip_vazao));
 		
-		if(listaCheckBox.get(0).isSelected())
-			campoTextoIPLocal = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_local);
-		if(listaCheckBox.get(1).isSelected())
-			campoTextoIPExterno = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_externo);
-		if(listaCheckBox.get(2).isSelected())
-			campoTextoMAC = (TextView)findViewById(R.id.activity_my_current_campo_texto_mac);
-		if(listaCheckBox.get(3).isSelected())
-			campoTextoVazao = (TextView)findViewById(R.id.activity_my_current_campo_texto_vazao);
+		this.repoHistorico = new RepositorioHistorico(this);
+				
+		campoTextoIPLocal = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_local);
+		campoTextoIPExterno = (TextView)findViewById(R.id.activity_my_current_campo_texto_ip_externo);
+		campoTextoMAC = (TextView)findViewById(R.id.activity_my_current_campo_texto_mac);
+		campoTextoVazao = (TextView)findViewById(R.id.activity_my_current_campo_texto_vazao);
 
 		tabHost = (TabHost)findViewById(R.id.activity_my_current_ip_tab_host);
 		tabHost.setup();
@@ -226,6 +222,14 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 
 	public void setCampoTextoVazao(TextView campoTextoVazao) {
 		this.campoTextoVazao = campoTextoVazao;
+	}
+
+	public ArrayList<CheckBox> getListaCheckBox() {
+		return listaCheckBox;
+	}
+
+	public void setListaCheckBox(ArrayList<CheckBox> listaCheckBox) {
+		this.listaCheckBox = listaCheckBox;
 	}
 
 	@Override
