@@ -98,7 +98,7 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 
 				if (codResposta == 200) {
 					vazao = new Vazao(clienteHttp.obterHtml(Vazao.class));
-					taxa_conexao = vazao.getVazao() + "Mbps";
+					taxa_conexao = vazao.getVazao();
 					publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "Ip Externo: " + ip_externo + 
 							"\nTaxa de Conexao " + taxa_conexao);
 				}
