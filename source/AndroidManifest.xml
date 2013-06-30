@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.myinfonow"
     android:versionCode="1"
-    android:versionName="1.1 build 20130531" >
+    android:versionName="1.2 build 20130629" >
     
     <uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -17,7 +17,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.myinfonow.MyInfoNow"
+            android:name="com.myinfonow.atividade.MyInfoNow"
             android:label="@string/app_name" 
             android:configChanges="orientation|screenSize|keyboardHidden">
             
@@ -28,7 +28,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.myinfonow.AtividadeAjuda"
+            android:name="com.myinfonow.atividade.AtividadeAjuda"
             android:label="@string/title_activity_ajuda"
             android:exported="false" >
             <intent-filter>
