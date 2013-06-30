@@ -35,6 +35,8 @@ public class RepositorioHistorico implements IRepositorio<Historico>{
 		valores.put(Historicos.IP_EXTERNO, historico.getIp_externo());
 		valores.put(Historicos.MAC, historico.getMac());
 		valores.put(Historicos.VAZAO, historico.getVazao());
+		valores.put(Historicos.LATITUDE, historico.getLatitude());
+		valores.put(Historicos.LONGITUDE, historico.getLongitude());
 		valores.put(Historicos.DATA_HORA, historico.getData_hora().getTime());
 		return valores;
 	}
@@ -75,12 +77,16 @@ public class RepositorioHistorico implements IRepositorio<Historico>{
 		int indiceIP_externo = cursor.getColumnIndex(Historicos.IP_EXTERNO);
 		int indiceMac = cursor.getColumnIndex(Historicos.MAC);
 		int indiceVazao = cursor.getColumnIndex(Historicos.VAZAO);
+		int indiceLatitude = cursor.getColumnIndex(Historicos.LATITUDE);
+		int indiceLongitude = cursor.getColumnIndex(Historicos.LONGITUDE);
 		int indiceDataHora = cursor.getColumnIndex(Historicos.DATA_HORA);
 		
 		indices.put(Historicos.IP_LOCAL, indiceIP_local);
 		indices.put(Historicos.IP_EXTERNO, indiceIP_externo);
 		indices.put(Historicos.MAC, indiceMac);
 		indices.put(Historicos.VAZAO, indiceVazao);
+		indices.put(Historicos.LATITUDE, indiceLatitude);
+		indices.put(Historicos.LONGITUDE, indiceLongitude);
 		indices.put(Historicos.DATA_HORA, indiceDataHora);
 		
 		return indices;
@@ -94,6 +100,8 @@ public class RepositorioHistorico implements IRepositorio<Historico>{
 		Historico.setIp_externo(cursor.getString(indices.get(Historicos.IP_EXTERNO)));
 		Historico.setMac(cursor.getString(indices.get(Historicos.MAC)));
 		Historico.setVazao(cursor.getString(indices.get(Historicos.VAZAO)));
+		Historico.setLatitude(cursor.getString(indices.get(Historicos.LATITUDE)));
+		Historico.setLongitude(cursor.getString(indices.get(Historicos.LONGITUDE)));
 		Historico.setData_hora(new Timestamp(cursor.getLong(indices.get(Historicos.DATA_HORA))));
 		
 		return Historico;

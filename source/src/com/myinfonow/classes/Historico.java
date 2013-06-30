@@ -73,8 +73,8 @@ public class Historico {
 		public static final String IP_EXTERNO = "ip_externo";
 		public static final String MAC = "mac";
 		public static final String VAZAO = "vazao";
-		public static final String latitude = "latitude";
-		public static final String longitude = "longitude";
+		public static final String LATITUDE = "latitude";
+		public static final String LONGITUDE = "longitude";
 		public static final String DATA_HORA = "data_hora";
 		
 		public static final String[] COLUNAS = {IP_LOCAL, IP_EXTERNO, MAC, VAZAO, DATA_HORA};
