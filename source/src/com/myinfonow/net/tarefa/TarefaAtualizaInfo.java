@@ -118,7 +118,7 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
                     double latitude = gpsTracker.getLatitude();
                     double longitude = gpsTracker.getLongitude();
                     
-                    gps = latitude + " \\ " + longitude;
+                    gps = latitude + " // " + longitude;
                     
                     publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "\nIp Externo: " + ip_externo + 
     						"\nTaxa de Conexao " + taxa_conexao +  "\nLat: " + latitude + "\nLong: " + longitude);
@@ -129,6 +129,8 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 				}
 				enderecos.put(Constantes.GPS, gps);
 			}
+			else
+				enderecos.put(Constantes.GPS, " // ");
 		}
 		return enderecos;
 		}

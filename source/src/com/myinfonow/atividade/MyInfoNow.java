@@ -262,6 +262,7 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 		String ip_externo = enderecos.get(Constantes.IP_EXTERNO);
 		String mac = enderecos.get(Constantes.MAC);
 		String vazao = enderecos.get(Constantes.VAZAO);
+		String[] gps = enderecos.get(Constantes.GPS).split("//");
 		getCampoTextoIP().setText(ip_local);
 		getCampoTextoIPExterno().setText(ip_externo);
 		getCampoTextoMAC().setText(mac);
@@ -273,6 +274,8 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 		historico.setIp_externo(ip_externo);
 		historico.setMac(mac);
 		historico.setVazao(vazao);
+		historico.setLatitude(gps[0]);
+		historico.setLongitude(gps[1]);
 		historico.setData_hora(Data.getDataHoraAtual());
 		Log.d("data--", Data.getDataHoraAtual().toString());
 		getRepoHistorico().insert(historico);
