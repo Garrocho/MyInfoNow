@@ -10,6 +10,7 @@ import com.myinfonow.net.ClienteHttp;
 import com.myinfonow.net.Conexao;
 import com.myinfonow.util.Constantes;
 import com.myinfonow.util.Enderecos;
+import com.myinfonow.util.GPSTracker;
 import com.myinfonow.util.Json.IpExterno;
 import com.myinfonow.util.Json.Vazao;
 
@@ -47,6 +48,7 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 		String mac = "00:00:00:00:00:00";
 		String ip_externo = "0.0.0.0"; 
 		String taxa_conexao = "0.0 Mbps";
+		String gps = "GPS Nao Habilitado";
 		 
 		HashMap<String, String> enderecos = new HashMap<String, String>();
 
@@ -101,6 +103,27 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 							"\nTaxa de Conexao" + taxa_conexao + "Mbps");
 				}
 				enderecos.put(Constantes.VAZAO, taxa_conexao);
+			}
+			
+			if(myinfonow.getListaCheckBox().get(4).isChecked()){
+				executeCount = 0;
+				publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "\nIp Externo: " + ip_externo + 
+						"\nTaxa de Conexao" + taxa_conexao + "Mbps" +  "\nLoading... (GPS)");
+				GPSTracker gpsTracker = new GPSTracker(myinfonow);
+				 
+                if(gpsTracker.canGetLocation()){
+                     
+                    double latitude = gpsTracker.getLatitude();
+                    double longitude = gpsTracker.getLongitude();
+                    
+                    gps = latitude + " \\ " + longitude;
+                    
+                    publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "\nIp Externo: " + ip_externo + 
+    						"\nTaxa de Conexao" + taxa_conexao + "Mbps" +  "\nLat: " + latitude + "\nLong: " + longitude);
+                }else{
+                    gpsTracker.showSettingsAlert();
+                }
+				enderecos.put(Constantes.GPS, gps);
 			}
 		}
 		return enderecos;

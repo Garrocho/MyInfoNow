@@ -45,6 +45,7 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 	private TextView campoTextoIPExterno;
 	private TextView campoTextoMAC;
 	private TextView campoTextoVazao;
+	private TextView campoTextoGPS;
 	private ListView listaHitorico;
 	private RepositorioHistorico repoHistorico;
 	private ProgressDialog dialogoProcesso;
@@ -58,11 +59,11 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 		
 		listaCheckBox = new ArrayList<CheckBox>();
 
-
 		listaCheckBox.add((CheckBox)findViewById(R.id.aba_minhas_informacoes_check_box_ip_local));
 		listaCheckBox.add((CheckBox)findViewById(R.id.aba_minhas_informacoes_check_box_ip_externo));
 		listaCheckBox.add((CheckBox)findViewById(R.id.aba_minhas_informacoes_check_box_mac));
 		listaCheckBox.add((CheckBox)findViewById(R.id.aba_minhas_informacoes_check_box_vazao));
+		listaCheckBox.add((CheckBox)findViewById(R.id.aba_minhas_informacoes_check_box_gps));
 		
 		this.repoHistorico = new RepositorioHistorico(this);
 
@@ -70,6 +71,7 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 		campoTextoIPExterno = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_ip_externo);
 		campoTextoMAC = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_mac);
 		campoTextoVazao = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_vazao);
+		campoTextoGPS = (TextView)findViewById(R.id.aba_minhas_informacoes_campo_texto_gps);
 
 		tabHost = (TabHost)findViewById(R.id.atividade_my_info_now);
 		tabHost.setup();
@@ -222,6 +224,10 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 	public TextView getCampoTextoVazao() {
 		return campoTextoVazao;
 	}
+	
+	public TextView getCampoTextoGPS() {
+		return campoTextoGPS;
+	}
 
 	public void setCampoTextoVazao(TextView campoTextoVazao) {
 		this.campoTextoVazao = campoTextoVazao;
@@ -260,6 +266,7 @@ public class MyInfoNow extends Activity implements IAtualizaInfo {
 		getCampoTextoIPExterno().setText(ip_externo);
 		getCampoTextoMAC().setText(mac);
 		getCampoTextoVazao().setText(vazao);
+		getCampoTextoGPS().setText(enderecos.get(Constantes.GPS));
 
 		Historico historico = new Historico();
 		historico.setIp_local(ip_local);
