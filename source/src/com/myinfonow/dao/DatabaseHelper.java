@@ -8,7 +8,7 @@ public class DatabaseHelper {
 	private SQLiteDatabase db;
 
 	private static final String NOME_BANCO = "myinfonow";
-	private static final int VERSAO = 3;
+	private static final int VERSAO = 4;
 	private static DatabaseHelper banco;
 
 	private static final String[] DATABASE_TABLES = {
@@ -25,6 +25,8 @@ public class DatabaseHelper {
 		"ip_externo VARCHAR(100), " +
 		"mac VARCHAR(100), " +
 		"vazao VARCHAR(100), " +
+		"latitude VARCHAR(100), " +
+		"longitude VARCHAR(100), " +
 		"data_hora TIMESTAMP, " +
 		"PRIMARY KEY (ip_local, ip_externo, data_hora)" +
 		");" +
