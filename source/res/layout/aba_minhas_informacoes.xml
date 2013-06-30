@@ -57,7 +57,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/aba_minhas_informacoes_campo_texto_vazao"
+        android:layout_below="@+id/aba_minhas_informacoes_campo_texto_gps"
         android:columnWidth="130dp"
         android:gravity="center"
         android:horizontalSpacing="10dp"
@@ -80,16 +80,6 @@
         android:text="@string/rotulo_endereco_ip_local" />
 
     <CheckBox
-        android:id="@+id/aba_minhas_informacoes_check_box_vazao"
-        style="@style/rotulo_titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/aba_minhas_informacoes_check_box_ip_externo"
-        android:layout_below="@+id/aba_minhas_informacoes_campo_texto_mac"
-        android:text="@string/rotulo_vazao"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <CheckBox
         android:id="@+id/aba_minhas_informacoes_check_box_mac"
         android:checked="true"
         style="@style/rotulo_titulo"
@@ -110,6 +100,38 @@
         android:layout_marginTop="84dp"
         android:gravity="center"
         android:text="@string/ip"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <CheckBox
+        android:id="@+id/aba_minhas_informacoes_check_box_vazao"
+        style="@style/rotulo_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/aba_minhas_informacoes_check_box_ip_externo"
+        android:layout_below="@+id/aba_minhas_informacoes_campo_texto_mac"
+        android:text="@string/rotulo_vazao"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <CheckBox
+        android:id="@+id/aba_minhas_informacoes_check_box_gps"
+        style="@style/rotulo_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/aba_minhas_informacoes_check_box_vazao"
+        android:layout_below="@+id/aba_minhas_informacoes_campo_texto_vazao"
+        android:text="@string/rotulo_gps"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/aba_minhas_informacoes_campo_texto_gps"
+        style="@style/rotulo_sub_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/aba_minhas_informacoes_check_box_gps"
+        android:gravity="center"
+        android:text="@string/vazao"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

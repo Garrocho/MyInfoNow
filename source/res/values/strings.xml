@@ -11,6 +11,7 @@
     <string name="rotulo_endereco_ip_externo">Endereço IP Externo</string>
     <string name="rotulo_endereco_mac">Endereço MAC</string>
     <string name="rotulo_vazao">Taxa de Conexao</string>
+    <string name="rotulo_gps">Latitude / Longitude</string>
     <string name="rotulo_icone">Menu</string>
     <string name="title_activity_ajuda">MyInfoNow</string>
     <string name="botao_voltar">Voltar</string>
