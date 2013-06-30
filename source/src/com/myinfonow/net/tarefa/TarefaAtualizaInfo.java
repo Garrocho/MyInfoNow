@@ -5,7 +5,7 @@ import java.util.HashMap;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.myinfonow.MyInfoNow;
+import com.myinfonow.atividade.MyInfoNow;
 import com.myinfonow.net.ClienteHttp;
 import com.myinfonow.net.Conexao;
 import com.myinfonow.util.Constantes;
