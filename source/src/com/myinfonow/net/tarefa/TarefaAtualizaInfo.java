@@ -87,7 +87,7 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 			if(myinfonow.getListaCheckBox().get(3).isChecked()){
 				executeCount = 0;
 				publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "\nIp Externo: " + ip_externo + 
-						"\nLoading... (Taxa de Conexao )");
+						"\nLoading... (Taxa de Conexao)");
 				clienteHttp = new ClienteHttp(Constantes.URL_TAXA_CONEXAO, "GET");
 				do {
 					executeCount++;
@@ -98,9 +98,9 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 
 				if (codResposta == 200) {
 					vazao = new Vazao(clienteHttp.obterHtml(Vazao.class));
-					taxa_conexao = vazao.getVazao();
+					taxa_conexao = vazao.getVazao() + "Mbps";
 					publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "Ip Externo: " + ip_externo + 
-							"\nTaxa de Conexao" + taxa_conexao + "Mbps");
+							"\nTaxa de Conexao " + taxa_conexao);
 				}
 				enderecos.put(Constantes.VAZAO, taxa_conexao);
 			}
@@ -108,7 +108,9 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
 			if(myinfonow.getListaCheckBox().get(4).isChecked()){
 				executeCount = 0;
 				publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "\nIp Externo: " + ip_externo + 
-						"\nTaxa de Conexao" + taxa_conexao + "Mbps" +  "\nLoading... (GPS)");
+						"\nTaxa de Conexao " + taxa_conexao +  "\nLoading... (GPS)");
+				
+				try {
 				GPSTracker gpsTracker = new GPSTracker(myinfonow);
 				 
                 if(gpsTracker.canGetLocation()){
@@ -119,10 +121,12 @@ public class TarefaAtualizaInfo extends AsyncTask<Boolean, String, HashMap<Strin
                     gps = latitude + " \\ " + longitude;
                     
                     publishProgress("Ip local: " + ip_interno + "\nMac: " + mac + "\nIp Externo: " + ip_externo + 
-    						"\nTaxa de Conexao" + taxa_conexao + "Mbps" +  "\nLat: " + latitude + "\nLong: " + longitude);
+    						"\nTaxa de Conexao " + taxa_conexao +  "\nLat: " + latitude + "\nLong: " + longitude);
                 }else{
                     gpsTracker.showSettingsAlert();
                 }
+				}catch (Exception e) {
+				}
 				enderecos.put(Constantes.GPS, gps);
 			}
 		}
