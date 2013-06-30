@@ -8,6 +8,8 @@ public class Historico {
 	private String ip_externo; 
 	private String mac;
 	private String vazao;
+	private String latitude;
+	private String longitude;
 	private Timestamp data_hora;
 	
 	public String getIp_local() {
@@ -49,13 +51,30 @@ public class Historico {
 	public void setVazao(String vazao) {
 		this.vazao = vazao;
 	}
+	
+	public String getLatitude() {
+		return latitude;
+	}
 
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
 
 	public static final class Historicos {
 		public static final String IP_LOCAL = "ip_local";
 		public static final String IP_EXTERNO = "ip_externo";
 		public static final String MAC = "mac";
 		public static final String VAZAO = "vazao";
+		public static final String latitude = "latitude";
+		public static final String longitude = "longitude";
 		public static final String DATA_HORA = "data_hora";
 		
 		public static final String[] COLUNAS = {IP_LOCAL, IP_EXTERNO, MAC, VAZAO, DATA_HORA};
