@@ -43,7 +43,6 @@
         
     <CheckBox
         android:id="@+id/aba_minhas_informacoes_check_box_ip_externo"
-        android:checked="true"
         style="@style/rotulo_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
